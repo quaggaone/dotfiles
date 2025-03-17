@@ -1,0 +1,4 @@
+--ignore=.stowrc
+--ignore=bootstrap.sh
+--ignore=DS_Store
+
