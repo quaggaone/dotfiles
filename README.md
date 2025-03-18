@@ -6,13 +6,13 @@
 
 # Setup Steps and Notes
 1. Run the `bootstrap.sh` script using `curl -s URL | sh` (test this)
-   It will download Xcode cli-tools and clone the repo to your local `~/dotfiles` folder. Then it will download and install Homebrew for Apple Silicon and install GNU `stow` to symlink all dotfiles into your home folder.
+   It will download Xcode cli-tools and clone the repo to your local `~/dotfiles` folder. Then it will symlink all relevant dotfiles into your home directory.
 
-- The scripts are supposed to behave like a config that's loaded (not natively possible in macOS; if you want see something like [nix-darwin](https://github.com/LnL7/nix-darwin/)). So the idea is that you should be able to run these scripts as many times as you want while getting the same result every time.
+- The scripts are supposed to behave like a config that's loaded (not natively possible in macOS; possible with something like [nix-darwin](https://github.com/LnL7/nix-darwin/)). So the idea is that you should be able to run these scripts as many times as you want while getting the same result every time.
 
 
 - Run the necessary executables in the `system` folder
-- Manually configure the follwing:
+- Manually configure the following settings:
     - Display Settings
     - Disable Auto Join on Guest Networks
     - Enable "Unlock with Apple Watch"
@@ -27,8 +27,5 @@
     - Touch ID settings
     - iCloud settings (Private Relay etc.)
     - Wallet & Apple Pay
-
-
-## to do
-- [ ] automatically populate Finder Spawn folder with most important symlinks (check if to use symlinks or macOS native Aliases)
-- [ ] turn off automatically save documents to iCloud (Finder or System Settings idk)
+- Copy SSH config and keys into `~/.ssh` folder
+- Configure `~/.gitconfig`

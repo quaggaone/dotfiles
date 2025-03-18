@@ -1,0 +1,7 @@
+theme = light:rose-pine-dawn,dark:rose-pine
+
+macos-titlebar-proxy-icon = hidden
+# macos-icon = glass
+
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = cmd+r=reload_config

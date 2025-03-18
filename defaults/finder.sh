@@ -10,6 +10,9 @@ FINDER_DOMAIN="com.apple.finder"
 # FINDER #
 ##########
 
+# Save to disk by default
+set_defaults "-g" "NSDocumentSaveNewDocumentsToCloud" "bool" "false"
+
 # Expanded Save Panel defaults
 set_defaults "-g" "NSNavPanelExpandedStateForSaveMode" "bool" "true"                   # Use expanded save panel by default
 set_defaults "-g" "NSNavPanelExpandedStateForSaveMode2" "bool" "true"                  # Use expanded save panel by default
@@ -47,4 +50,3 @@ echo "Restarting Finder to apply changes..."
 killall Finder
 
 echo "Finder settings updated!"
-

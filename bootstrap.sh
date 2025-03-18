@@ -1,9 +1,11 @@
 #!/bin/zsh
 
 # Check if Xcode command line tools are already installed
+echo "Checking for Xcode command line tools..."
 if ! xcode-select -p &>/dev/null; then
+    echo "Not found..."
     echo "Installing Xcode command line tools..."
-    
+
     # Trigger the installation
     xcode-select --install
 
@@ -18,30 +20,26 @@ else
     echo "Xcode command line tools are already installed."
 fi
 
-# Clone this repo into ~/dotfiles/; skip if found
+# Clone this repo into ~/dotfiles/; exit if found
 echo "Cloning repo to disk..."
-# [ ! -d "$HOME/dotfiles" ] && git clone URL ~/dotfiles		
-
-# Install Homebrew; skip if found
-if ! command -v brew &> /dev/null; then
-    echo "Installing Homebrew from Github..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+# Check if the directory exists
+if [ -d "$HOME/dotfiles" ]; then
+    echo "Directory $HOME/dotfiles already exists. Aborting..."
+    exit 1
+else
+    git clone https://github.com/quaggaone/dotfiles.git ~/dotfiles
 fi
-
-
-# Install stow
-echo "Installing stow via brew..."
-brew install stow
+cd ~/dotfiles
+git remote set-url origin git@github.com:quaggaone/dotfiles.git
+cd
 
 # Stow dotfiles to home directory
+echo "Stowing dotfiles into home directory..."
 cd ~/dotfiles
-stow .
+./stow.sh
 
 # Next steps
 echo "Next Steps:"
-echo "Configure System Settings using ~/dotfiles/defaults/system/index.sh"
-echo "Install programms via brew using brew bundle install Brewfile"
-
+echo "1. Install Homebrew from https://brew.sh"
+echo "2. Configure System Settings using ~/dotfiles/defaults/system/index.sh"
+echo "3. Install programms via brew using brew bundle install .Brewfile"
