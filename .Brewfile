@@ -77,6 +77,7 @@ mas "Scenecuts", id: 1540491573
 brew "python"    # installs latest python because macOS doesn't
 # brew "node" # replace with nvm to manage node installs
 
+cask "ghostty"
 cask "vscodium"
 cask "xcodes"
 cask "zed"
@@ -139,4 +140,3 @@ mas "Logic Pro", id: 634148309
 # cask "anki"
 # cask "r"    # omit if rstudio works without it or install as formula
 # cask "rstudio"
-
