@@ -1,2 +1,8 @@
 .DS_Store
+/defaults/diffs
 secrets.sh
+
+# don't track app bullshit
+/.config/raycast
+/.config/github-copilot
+/.config/zed/prompts

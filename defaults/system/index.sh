@@ -4,4 +4,6 @@
 ./controlcenter.sh
 ./desktop-dock.sh
 ./hostname.sh
+./keyboard.sh
 ./pointer.sh
+

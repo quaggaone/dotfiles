@@ -1,6 +1,4 @@
-tap "homebrew/aliases"
-tap "homebrew/bundle"
-tap "homebrew/services"
+# to install use "brew bundle install --verbose"
 
 ###########
 # GENERAL #
@@ -21,6 +19,7 @@ mas "WhatsApp", id: 310633997
 # Safari Extensions
 # mas "DuckDuckGo Privacy for Safari", id: 1482920575    # discontinued in Safari for some reason
 # mas "Dynamo", id: 1445910651
+mas "Noir", id: 1592917505
 # mas "Notion Web Clipper", id: 1559269364
 mas "Obsidian Web Clipper", id: 6720708363
 # mas "PiPifier", id: 1160374471
@@ -33,6 +32,7 @@ mas "Obsidian Web Clipper", id: 6720708363
 cask "nikitabobko/tap/aerospace"
 # cask "alt-tab"
 cask "jordanbaird-ice"
+cask "raycast"
 
 # mas "Magnet", id: 441258766
 
@@ -64,7 +64,7 @@ mas "DaisyDisk", id: 411643860
 mas "Hotspot Shield", id: 771076721
 mas "Mountain Duck", id: 1024974133
 mas "The Unarchiver", id: 425424353
-# mas "Usage", id: 1561788435
+mas "Usage", id: 1561788435
 mas "WireGuard", id: 1451685025
 mas "HomeControl", id: 1547121417
 mas "Scenecuts", id: 1540491573
@@ -137,6 +137,6 @@ mas "Logic Pro", id: 634148309
 # UNI #
 #######
 
-# cask "anki"
+cask "anki"
 # cask "r"    # omit if rstudio works without it or install as formula
 # cask "rstudio"

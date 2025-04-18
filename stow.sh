@@ -1,4 +1,4 @@
-ln .config ~/.config
-ln .Brewfile ~/.Brewfile
-ln .zshrc ~/.zshrc
-ln .hustlogin ~/.hushlogin
+ln -siF dotfiles/.config $HOME
+ln -siF dotfiles/.zshrc $HOME/.zshrc
+ln -siF dotfiles/.hushlogin $HOME/.hushlogin
+
