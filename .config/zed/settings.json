@@ -22,5 +22,10 @@
     "toggle_relative_line_numbers": true
   },
   "soft_wrap": "editor_width",
-  "relative_line_numbers": true
+  "relative_line_numbers": true,
+  "auto_install_extensions": {
+    "html": true,
+    "scss": true,
+    "zed-legacy-themes": true
+  }
 }

@@ -75,7 +75,7 @@ mas "Scenecuts", id: 1540491573
 #######
 
 brew "python"    # installs latest python because macOS doesn't
-# brew "node" # replace with nvm to manage node installs
+brew "node" # maybe replace with nvm to manage node installs
 
 cask "ghostty"
 cask "vscodium"
