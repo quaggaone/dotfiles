@@ -53,6 +53,7 @@ set_defaults "com.apple.menuextra.clock" "ShowDayOfWeek" "bool" "true"
 set_defaults "com.apple.menuextra.clock" "ShowSeconds" "bool" "false"
 defaults -currentHost write com.apple.Spotlight MenuItemHidden -bool true              # hides Spotlight from Menu Bar
 set_defaults "com.apple.Siri" "StatusMenuVisible" "bool" "false"
+set_defaults "-g" "_HIHideMenuBar" "int" "1"
 
 
 # Restart service to apply changes

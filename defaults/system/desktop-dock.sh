@@ -97,7 +97,7 @@ set_defaults "-g" "NSQuitAlwaysKeepsWindows" "bool" "true"
 set_defaults "com.apple.dock" "mru-spaces" "bool" "false"              # Rearrange Spaces based on most recent use
 set_defaults "-g" "AppleSpacesSwitchOnActivate" "bool" "true"          # Switch to Space with open window for selected app
 set_defaults "com.apple.dock" "expose-group-apps" "bool" "true"        # Group windows by application
-set_defaults "com.apple.spaces" "spans-displays" "bool" "true"         # Displays hace separate Spaces off (better for AeroSpace)
+set_defaults "com.apple.spaces" "spans-displays" "bool" "false"        # Displays have separate Spaces (AeroSpace recommends it off; SketchyBar only works with it on)
 
 # Hot Corners section
 set_defaults "com.apple.dock" "wvous-tl-corner" "int" "5"              # Top-left -> Screensaver

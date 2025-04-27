@@ -26,6 +26,7 @@
   "auto_install_extensions": {
     "html": true,
     "scss": true,
-    "zed-legacy-themes": true
+    "zed-legacy-themes": true,
+    "toml": true
   }
 }

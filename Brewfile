@@ -29,6 +29,8 @@ mas "Obsidian Web Clipper", id: 6720708363
 # WORKSPACE #
 #############
 
+brew "FelixKratz/formulae/sketchybar"
+
 cask "nikitabobko/tap/aerospace"
 # cask "alt-tab"
 cask "jordanbaird-ice"
@@ -113,6 +115,8 @@ mas "Microsoft Word", id: 462054704
 # PHOTO VIDEO #
 ###############
 
+cask "adobe-creative-cloud"
+
 mas "Affinity Designer 2", id: 1616831348
 mas "Affinity Photo 2", id: 1616822987
 mas "Affinity Publisher 2", id: 1606941598
@@ -140,3 +144,11 @@ mas "Logic Pro", id: 634148309
 cask "anki"
 # cask "r"    # omit if rstudio works without it or install as formula
 # cask "rstudio"
+
+
+#########
+# FONTS #
+#########
+
+cask "font-sf-pro"
+cask "sf-symbols"
