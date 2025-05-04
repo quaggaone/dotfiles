@@ -19,28 +19,35 @@ ITEM_DIR="$CONFIG_DIR/items"
 
 sketchybar --bar    position=top            \
                     y_offset=-24            \
-                    notch_offset=-44        \
+                    notch_offset=-21        \
                     height=32               \
                     notch_display_height=40 \
                     blur_radius=80          \
-                    color=$BAR_COLOR
+                    color=$COLOR_BAR        \
+                    padding_left=12         \
+                    padding_right=12        \
+                    notch_padding_left=20
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
 # For a full list of all available item properties see:
 # https://felixkratz.github.io/SketchyBar/config/items
 
+export PADDING_OUTER=5
+export PADDING_INNER=4
+export MARGIN=2
+
 default=(
-  padding_left=0
-  padding_right=0
+  padding_left=$MARGIN
+  padding_right=$MARGIN
   icon.font="SF Pro:Medium:17.0"
   label.font="SF Pro:Expanded Medium:14.0"
   icon.color=$WHITE
   label.color=$WHITE
-  icon.padding_left=10
-  icon.padding_right=4
-  label.padding_left=4
-  label.padding_right=10
+  icon.padding_left=$PADDING_OUTER
+  icon.padding_right=$PADDING_INNER
+  label.padding_left=$PADDING_INNER
+  label.padding_right=$PADDING_OUTER
   background.corner_radius=5
   background.height=24
 )
@@ -76,10 +83,11 @@ for sid in $(aerospace list-workspaces --all); do
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \
         --set space.$sid \
-        background.color=$ITEM_BG_COLOR \
+        background.color=$COLOR_80 \
         background.drawing=off \
         icon.drawing=off \
-        label.padding_left=10 \
+        label.padding_left=$PADDING_OUTER \
+        label.color=$COLOR_10 \
         label="$sid" \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
@@ -94,11 +102,10 @@ done
 #            icon.padding_right=10
 sketchybar --add item front_app left \
            --set front_app icon.drawing=off \
-           label.padding_left=10 \
+           label.padding_left=$PADDING_OUTER \
            script="$PLUGIN_DIR/front_app.sh" \
-           background.color=$COLOR_DARK \
-           label.color=$COLOR_LIGHT \
-           background.padding_left=10 \
+           background.color=$COLOR_80 \
+           label.color=$COLOR_10 \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
