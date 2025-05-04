@@ -202,6 +202,27 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
+# Open Apps
+alt-w = '''exec-and-forget osascript -e '
+tell application "Safari"
+    make new document at end of documents
+    activate
+end tell'
+'''
+# https://www.reddit.com/r/macapps/comments/191gh1x/comment/kh0glgm/
+alt-e = '''exec-and-forget osascript -e 'tell application "Finder"
+    set targetFolder to (path to home folder as text) & "Spawn"
+    make new Finder window to folder targetFolder
+    do shell script "open -a Finder"
+end tell'
+'''
+# alt-t = '''exec-and-forget osascript -e '
+# tell application "Ghostty"
+#     make new window
+#     activate
+# end tell'
+# '''
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -225,6 +246,7 @@ down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
 
+# Arrange Apps
 [[on-window-detected]]
 if.app-id = 'com.apple.FaceTime'
 run = ['layout floating']
