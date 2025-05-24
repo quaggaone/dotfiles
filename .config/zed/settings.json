@@ -15,7 +15,7 @@
   },
   "telemetry": {
     "diagnostics": true,
-    "metrics": false
+    "metrics": true
   },
   "vim_mode": true,
   "vim": {
@@ -23,6 +23,9 @@
   },
   "soft_wrap": "editor_width",
   "relative_line_numbers": true,
+  "minimap": {
+    "show": "always"
+  },
   "auto_install_extensions": {
     "html": true,
     "scss": true,
