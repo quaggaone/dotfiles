@@ -4,7 +4,7 @@
 # specifically this file: https://github.com/forteleaf/sketkchybar-with-aerospace/blob/main/sketchybar/items/spaces.sh
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
-  for i in $(aerospace list-workspaces --monitor $m --empty no); do
+  for i in $(aerospace list-workspaces --monitor $m); do
     sid=$i
     space=(
       space="$sid"
@@ -43,9 +43,9 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
     sketchybar --set space.$sid label="$icon_strip"
   done
 
-  # added flag `--empty no` to first list-workspaces command to reduce lines of code
-  # for i in $(aerospace list-workspaces --monitor $m --empty); do
-  #   sketchybar --set space.$i display=0
-  # done
+# added flag `--empty no` to first list-workspaces command to reduce lines of code
+  for i in $(aerospace list-workspaces --monitor $m --empty); do
+    sketchybar --set space.$i display=0
+  done
 
 done

@@ -23,7 +23,7 @@ case "${PERCENTAGE}" in
   ;;
   [1-2][0-9]) ICON="􀛩" COLOR="$COLOR_80" BG="$COLOR_10" LABEL_DRAWING="on"
   ;;
-  [1-9]|10) ICON="􀛩" COLOR="$COLOR_60" BG="$COLOR_10" LABEL_DRAWING="on"
+  [1-9]|10) ICON="􀛩" COLOR="$COLOR_50" BG="$COLOR_10" LABEL_DRAWING="on"
   ;;
   *) ICON="􀛪"
 esac
@@ -45,7 +45,7 @@ fi
 
 
 sketchybar --set "$NAME" icon.drawing=off \
-    alias.drawing=$ICON_DRAWING \
+    drawing=$ICON_DRAWING \
     alias.color=$COLOR \
     label="${PERCENTAGE}%" \
     label.drawing=$LABEL_DRAWING \
