@@ -5,3 +5,9 @@ macos-titlebar-proxy-icon = hidden
 
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = cmd+r=reload_config
+
+font-family =               ZedMono Nerd Font Mono
+font-style =                Extended
+font-style-bold =           Extended ExtraBold
+font-style-italic =         Extended Oblique
+font-style-bold-italic =    Extended ExtraBold Oblique

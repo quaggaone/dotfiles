@@ -57,7 +57,7 @@ cask "yubico-authenticator"
 # cask "yubico-yubikey-manager"
 cask "utm"
 cask "imageoptim"
-# cask "obs"
+cask "obs"
 
 mas "AudioSwitcher", id: 561712678
 mas "AusweisApp", id: 948660805
@@ -76,8 +76,9 @@ mas "Scenecuts", id: 1540491573
 # DEV #
 #######
 
-brew "python"    # installs latest python because macOS doesn't
-brew "node" # maybe replace with nvm to manage node installs
+brew "node"		# maybe replace with nvm to manage node installs
+brew "python"		# installs latest python because macOS doesn't
+brew "starship"		# cross-shell prompt
 
 cask "ghostty"
 cask "vscodium"
@@ -152,3 +153,13 @@ cask "anki"
 
 cask "font-sf-pro"
 cask "sf-symbols"
+cask "font-ibm-plex-sans"
+cask "font-ibm-plex-sans-condensed"
+cask "font-ibm-plex-serif"
+cask "font-ibm-plex-mono"
+cask "font-ibm-plex-math"
+cask "font-blex-mono-nerd-font"		# Nerd Font of IBM Plex Mono
+# cask "font-iosevka-term-nerd-font"
+# cask "font-iosevka-nerd-font"
+cask "font-zed-mono-nerd-font"
+
