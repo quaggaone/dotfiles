@@ -15,6 +15,45 @@ set_defaults "$DOCK_DOMAIN" "showAppExposeGestureEnabled" "bool" "true"
 set_defaults "$DOCK_DOMAIN" "showhidden" "bool" "true"
 set_defaults "$DOCK_DOMAIN" "launchanim" "bool" "true"
 set_defaults "$DOCK_DOMAIN" "show-process-indicators" "bool" "true"
+defaults write com.apple.dock persistent-apps -array ""
+
+# define function to easily set all apps for the dock
+set_persistent_apps() {
+    local label="$1"
+    local location="$2"
+
+    defaults write com.apple.dock persistent-apps -array-add "\
+    <dict>
+        <key>tile-data</key>
+        <dict>
+            <key>file-data</key>
+            <dict>
+                <key>_CFURLString</key>
+                <string>file://${location}</string>
+                <key>_CFURLStringType</key>
+                <integer>15</integer>
+            </dict>
+            <key>file-label</key>
+            <string>${label}</string>
+            <key>showas</key>
+            <integer>2</integer>
+        </dict>
+        <key>tile-type</key>
+        <string>file-tile</string>
+    </dict>"
+}
+
+# idk why safari has this weird path. i just copied it from the default macos config.
+set_persistent_apps "Safari"    "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/"
+set_persistent_apps "Calendar"  "/System/Applications/Calendar.app/"
+set_persistent_apps "Mail"      "/System/Applications/Mail.app/"
+set_persistent_apps "WhatsApp"  "/Applications/WhatsApp.app/"
+set_persistent_apps "Messages"  "/System/Applications/Messages.app/"
+set_persistent_apps "Obsidian"  "/Applications/Obsidian.app/"
+set_persistent_apps "Le Chat"   "${HOME}/Applications/Le%20Chat.app/"
+set_persistent_apps "Ghostty"   "/Applications/Ghostty.app/"
+set_persistent_apps "Zed"       "/Applications/Zed.app/"
+
 defaults write com.apple.dock persistent-others -array ""
 ## add Downloads and Screenshots folder to dock
 ## arragement: sort by; displayas: display as; showas: view content as
