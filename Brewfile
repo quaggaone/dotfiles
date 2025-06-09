@@ -76,11 +76,13 @@ mas "Scenecuts", id: 1540491573
 # DEV #
 #######
 
+brew "composer"		# php dependency manager
 brew "node"		# maybe replace with nvm to manage node installs
 brew "python"		# installs latest python because macOS doesn't
 brew "starship"		# cross-shell prompt
 
 cask "ghostty"
+cask "mamp"
 cask "vscodium"
 cask "xcodes"
 cask "zed"
@@ -93,6 +95,8 @@ mas "Developer", id: 640199958
 ##########
 # OFFICE #
 ##########
+
+brew "typst"		# markup-based typesetting system
 
 cask "markedit"
 cask "notion"
@@ -109,7 +113,7 @@ mas "Microsoft Excel", id: 462058435
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 # mas "Microsoft OneNote", id: 784801555
-# mas "Microsoft Outlook", id: 985367838
+mas "Microsoft Outlook", id: 985367838
 
 
 ###############
