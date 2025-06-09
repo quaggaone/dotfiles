@@ -1,0 +1,14 @@
+{
+  "editor.autoCharacterPairs" : true,
+  "editor.indentBehavior" : "never",
+  "general.checksForUpdates" : false,
+  "general.mainWindowHotKey" : {
+    "key" : "M",
+    "modifiers" : [
+      "Shift",
+      "Command",
+      "Option"
+    ]
+  }
+}
+
