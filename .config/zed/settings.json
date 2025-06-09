@@ -10,26 +10,55 @@
   "base_keymap": "VSCode",
   "theme": {
     "mode": "system",
-    "light": "Zed Legacy: Rosé Pine Dawn",
-    "dark": "Zed Legacy: Rosé Pine"
+    "light": "Zed Legacy: Atelier Plateau Light",
+    "dark": "Zed Legacy: Atelier Plateau Dark"
   },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Colored Zed Icons Theme Light",
+    "dark": "Colored Zed Icons Theme Dark"
+  },
+  "buffer_font_family": "ZedMono Nerd Font Mono",
+  "buffer_line_height": "standard",
   "telemetry": {
     "diagnostics": true,
     "metrics": true
   },
+  "auto_update": false,
   "vim_mode": true,
   "vim": {
     "toggle_relative_line_numbers": true
   },
+  "format_on_save": "off",
   "soft_wrap": "editor_width",
   "relative_line_numbers": true,
   "minimap": {
     "show": "always"
   },
+  "terminal": {
+    "font_family": "ZedMono Nerd Font Mono"
+  },
   "auto_install_extensions": {
+    // LANGUAGES
     "html": true,
     "scss": true,
+    "toml": true,
+    "php": true,
+    "git-firefly": true,
+    // HELPERS
+    "emmet": true,
+    // THEMES
     "zed-legacy-themes": true,
-    "toml": true
+    "rose-pine-theme": true,
+    // ICON THEMES
+    "colored-zed-icons-theme": true
+  },
+  "file_types": {
+    "HTML": ["njk"]
+  },
+  "languages": {
+    "SCSS": {
+      "formatter": "language_server"
+    }
   }
 }
