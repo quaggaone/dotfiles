@@ -3,7 +3,9 @@
 secrets.sh
 
 # don't track app bullshit
+/.config/composer
 /.config/raycast
+/.config/swiftpm
 /.config/github-copilot
 /.config/zed/prompts
 /.config/zed/conversations
