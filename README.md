@@ -1,8 +1,8 @@
 > These scripts are supposed to be structured like the corresponding View in the System Setting apps or their settings.
-> Most of of the options and values where found by changing the values in the settings app and checking what changes with the diff script from the [](macos-defaults.com) project.
+> Most of of the options and values where found by changing the values in the settings app and checking what changed with the `diff` script from the [macos-defaults.com](https://macos-defaults.com) project.
 > The nix-darwin documentation was also helpful for an overview and type lookup.
 
-> Some things like the Safari plist require Full Disk Access.
+> Some things like the Safari `plist` require Full Disk Access.
 
 # Setup Steps and Notes
 1. Run the `bootstrap.sh` script using `curl -L URL | sh` (test this)
@@ -11,7 +11,7 @@
 - The scripts are supposed to behave like a config that's loaded (not natively possible in macOS; possible with something like [nix-darwin](https://github.com/LnL7/nix-darwin/)). So the idea is that you should be able to run these scripts as many times as you want while getting the same result every time.
 
 
-- Run the necessary executables in the `system` folder
+- Run the necessary executables in the `defaults/system` folder
 - Manually configure the following settings:
     - Display Settings
     - Disable Auto Join on Guest Networks
@@ -29,3 +29,6 @@
     - Wallet & Apple Pay
 - Copy SSH config and keys into `~/.ssh` folder
 - Configure `~/.gitconfig`
+
+## addtitional resources
+- [This script (https://github.com/brunerd/macAdminTools/blob/99da3d3dd1155019758a7753075aea13db6ad3b2/Scripts/iCloudPrivateRelayStatus.sh#L36)](https://github.com/brunerd/macAdminTools/blob/99da3d3dd1155019758a7753075aea13db6ad3b2/Scripts/iCloudPrivateRelayStatus.sh#L36) can check whether iCloud Private Relay is running. Maybe this can be used to set the status as well.
