@@ -41,6 +41,7 @@ chflags nohidden ~/Library                                                      
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	General -bool true \
 	MetaData -bool true \
+	Name -bool true \
 	OpenWith -bool true \
 	Preview -bool true \
 	Privileges -bool true
