@@ -3,7 +3,7 @@
 export WHITE=0xffffffff
 
 # -- FD Colors --
-export COLOR_BAR=0x20000000
+export COLOR_BAR=0x00000000
 # export ITEM_BG_COLOR=0x40ffffff
 # export ITEM_BG_COLOR=0x40FCE6E7
 export COLOR_ACCENT=0xFFe5000c
