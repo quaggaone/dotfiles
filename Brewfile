@@ -146,8 +146,9 @@ mas "Logic Pro", id: 634148309
 # UNI #
 #######
 
+brew "r"    # explicitly install as formula (no GUI r console)
+
 cask "anki"
-# cask "r"    # omit if rstudio works without it or install as formula
 # cask "rstudio"
 
 
@@ -166,4 +167,3 @@ cask "font-blex-mono-nerd-font"		# Nerd Font of IBM Plex Mono
 # cask "font-iosevka-term-nerd-font"
 # cask "font-iosevka-nerd-font"
 cask "font-zed-mono-nerd-font"
-
