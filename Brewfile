@@ -81,6 +81,7 @@ brew "eza"		# replacement for ls
 brew "node"		# maybe replace with nvm to manage node installs
 brew "python"		# installs latest python because macOS doesn't
 brew "starship"		# cross-shell prompt
+brew "zoxide"		# cd replacement
 
 cask "ghostty"
 cask "mamp"

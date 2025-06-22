@@ -32,6 +32,10 @@ alias bg-all='brew upgrade -g' # --no-quarantine'
 autoload -Uz compinit
 compinit
 
-# Starship cross-shell prompt
+# starship cross-shell prompt
 eval "$(starship init zsh)"
+
+# zoxide config
+export _ZO_DATA_DIR=$XDG_DATA_HOME
+eval "$(zoxide init --cmd cd zsh)"
 
