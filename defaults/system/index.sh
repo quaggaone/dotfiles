@@ -5,5 +5,6 @@
 ./desktop-dock.sh
 ./hostname.sh
 ./keyboard.sh
+./loginwindow.sh
 ./pointer.sh
 
