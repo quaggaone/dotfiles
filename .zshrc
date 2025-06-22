@@ -35,6 +35,9 @@ compinit
 # starship cross-shell prompt
 eval "$(starship init zsh)"
 
+# fzf config
+source <(fzf --zsh)
+
 # zoxide config
 export _ZO_DATA_DIR=$XDG_DATA_HOME
 eval "$(zoxide init --cmd cd zsh)"
