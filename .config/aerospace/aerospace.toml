@@ -209,6 +209,7 @@ tell application "Safari"
     activate
 end tell'
 '''
+
 # https://www.reddit.com/r/macapps/comments/191gh1x/comment/kh0glgm/
 alt-e = '''exec-and-forget osascript -e 'tell application "Finder"
     set targetFolder to (path to home folder as text) & "Spawn"
@@ -216,12 +217,13 @@ alt-e = '''exec-and-forget osascript -e 'tell application "Finder"
     do shell script "open -a Finder"
 end tell'
 '''
-# alt-t = '''exec-and-forget osascript -e '
-# tell application "Ghostty"
-#     make new window
-#     activate
-# end tell'
-# '''
+
+alt-t = '''exec-and-forget osascript -e '
+tell application "Ghostty"
+    activate
+    tell application "System Events" to keystroke "n" using {command down}
+end tell'
+'''
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
