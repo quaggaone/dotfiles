@@ -87,7 +87,7 @@ brew "zoxide"		# cd replacement
 cask "ghostty"
 cask "mamp"
 cask "vscodium"
-cask "xcodes"
+cask "xcodes-app"
 cask "zed"
 
 # mas "Xcode", id: 497799835
