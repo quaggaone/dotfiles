@@ -10,6 +10,11 @@ MAIL_DOMAIN="com.apple.mail"
 # MAIL #
 ########
 
+# Menubar Settings
+## View
+set_defaults "$MAIL_DOMAIN" "ColumnLayoutMessageList" "bool" "true"
+set_defaults "$MAIL_DOMAIN" "BottomPreview" "bool" "false"
+
 # Settings
 ## Viewing
 
