@@ -141,8 +141,8 @@ set_defaults "com.apple.spaces" "spans-displays" "bool" "false"        # Display
 # Hot Corners section
 set_defaults "com.apple.dock" "wvous-tl-corner" "int" "5"              # Top-left -> Screensaver
 set_defaults "com.apple.dock" "wvous-tr-corner" "int" "12"             # Top-right -> Notification Center
-set_defaults "com.apple.dock" "wvous-bl-corner" "int" "11"             # Bottom-left -> Launchpad
-set_defaults "com.apple.dock" "wvous-br-corner" "int" "2"              # Bottom-right -> Mission Control
+set_defaults "com.apple.dock" "wvous-bl-corner" "int" "0"              # Bottom-left -> no option
+set_defaults "com.apple.dock" "wvous-br-corner" "int" "0"              # Bottom-right -> no option
 
 
 # Appearance section
