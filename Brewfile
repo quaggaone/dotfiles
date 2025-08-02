@@ -45,6 +45,7 @@ cask "raycast"
 
 # brew "htop"
 
+cask "karabiner-elements"
 cask "mac-mouse-fix"
 # cask "macs-fan-control"
 # cask "monitorcontrol"

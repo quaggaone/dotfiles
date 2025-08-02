@@ -4,6 +4,8 @@ secrets.sh
 
 # don't track app bullshit
 /.config/composer
+/.config/karabiner/*
+!/.config/karabiner/karabiner.json
 /.config/raycast
 /.config/swiftpm
 /.config/github-copilot
