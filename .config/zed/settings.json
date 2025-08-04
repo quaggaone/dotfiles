@@ -45,6 +45,7 @@
     "toml": true,
     "php": true,
     "git-firefly": true,
+    "typst": true,
     // HELPERS
     "emmet": true,
     // THEMES
@@ -59,6 +60,14 @@
   "languages": {
     "SCSS": {
       "formatter": "language_server"
+    }
+  },
+  "lsp": {
+    "tinymist": {
+      "settings": {
+        "exportPdf": "onSave",
+        "outputPath": "$root/$name"
+      }
     }
   }
 }
