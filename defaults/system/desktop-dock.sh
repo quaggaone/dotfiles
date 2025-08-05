@@ -139,10 +139,27 @@ set_defaults "com.apple.dock" "expose-group-apps" "bool" "true"        # Group w
 set_defaults "com.apple.spaces" "spans-displays" "bool" "false"        # Displays have separate Spaces (AeroSpace recommends it off; SketchyBar only works with it on)
 
 # Hot Corners section
-set_defaults "com.apple.dock" "wvous-tl-corner" "int" "5"              # Top-left -> Screensaver
-set_defaults "com.apple.dock" "wvous-tr-corner" "int" "12"             # Top-right -> Notification Center
-set_defaults "com.apple.dock" "wvous-bl-corner" "int" "0"              # Bottom-left -> no option
-set_defaults "com.apple.dock" "wvous-br-corner" "int" "0"              # Bottom-right -> no option
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Application Windows
+#  4: Desktop
+#  5: Start Screen Saver
+#  6: Disable Screen Saver
+#  7: Dashboard
+# 10: Put Display to Sleep
+# 11: Launchpad
+# 12: Notification Center
+# 13: Lock Screen
+
+# Top-left -> Put Display to Sleep
+set_defaults "com.apple.dock" "wvous-tl-corner" "int" "10"
+# Top-right -> Notification Center
+set_defaults "com.apple.dock" "wvous-tr-corner" "int" "12"
+# Bottom-left -> no option
+set_defaults "com.apple.dock" "wvous-bl-corner" "int" "0"
+# Bottom-right -> no option
+set_defaults "com.apple.dock" "wvous-br-corner" "int" "0"
 
 
 # Appearance section
