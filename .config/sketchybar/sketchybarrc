@@ -18,16 +18,13 @@ ITEM_DIR="$CONFIG_DIR/items"
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 sketchybar --bar    position=top            \
-                    y_offset=-24            \
-                    notch_offset=-21        \
                     height=32               \
                     notch_display_height=40 \
                     notch_width=230         \
                     blur_radius=80          \
                     color=$COLOR_BAR        \
                     padding_left=12         \
-                    padding_right=12        \
-                    notch_padding_left=20
+                    padding_right=12
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
