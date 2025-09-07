@@ -1,3 +1,6 @@
+# load secrets
+source "$HOME/dotfiles/secrets.sh"
+
 # XDG base directories
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -42,3 +45,5 @@ source <(fzf --zsh)
 export _ZO_DATA_DIR=$XDG_DATA_HOME
 eval "$(zoxide init --cmd cd zsh)"
 
+# api keys
+export MISTRAL_API_KEY=$DOTFILES_API_MISTRAL

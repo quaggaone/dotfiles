@@ -7,11 +7,19 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent": {
+    "use_modifier_to_send": true,
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "ollama",
+      "model": "gpt-oss:20b"
+    }
+  },
   "base_keymap": "VSCode",
   "theme": {
     "mode": "system",
-    "light": "Zed Legacy: Atelier Plateau Light",
-    "dark": "Zed Legacy: Atelier Plateau Dark"
+    "light": "Zed Legacy: Rosé Pine Dawn",
+    "dark": "Zed Legacy: Rosé Pine"
   },
   "icon_theme": {
     "mode": "system",
