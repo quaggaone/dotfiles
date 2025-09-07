@@ -1,0 +1,18 @@
+{
+    "editor.stickyTabStops": true,
+    "workbench.preferredDarkColorTheme": "Rosé Pine",
+    "workbench.preferredLightColorTheme": "Rosé Pine Dawn",
+    "workbench.iconTheme": "rose-pine-icons",
+    "window.autoDetectColorScheme": true,
+    "editor.wordWrap": "on",
+    "editor.minimap.showSlider": "always",
+    "editor.stickyScroll.maxLineCount": 15,
+    "emmet.includeLanguages": {
+        "nunjucks": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "files.associations": {
+        "*.html": "html",
+        "*.njk": "html"
+    }
+}

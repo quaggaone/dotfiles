@@ -172,3 +172,9 @@ cask "font-blex-mono-nerd-font"		# Nerd Font of IBM Plex Mono
 # cask "font-iosevka-term-nerd-font"
 # cask "font-iosevka-nerd-font"
 cask "font-zed-mono-nerd-font"
+
+#####################
+# VSCODE EXTENSIONS #
+#####################
+
+vscode "mvllow.rose-pine"       # color theme
