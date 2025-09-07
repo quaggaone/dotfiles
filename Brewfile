@@ -59,6 +59,7 @@ cask "yubico-authenticator"
 cask "utm"
 cask "imageoptim"
 cask "obs"
+cask "ollama"
 
 mas "AudioSwitcher", id: 561712678
 mas "AusweisApp", id: 948660805
