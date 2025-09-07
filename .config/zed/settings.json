@@ -45,6 +45,8 @@
     "toml": true,
     "php": true,
     "git-firefly": true,
+    "xml": true,
+    "nunjucks": true,
     "typst": true,
     // HELPERS
     "emmet": true,
@@ -66,7 +68,7 @@
     "tinymist": {
       "settings": {
         "exportPdf": "onSave",
-        "outputPath": "$root/$name"
+        "outputPath": "$root/pdf/$dir/$name"
       }
     }
   }
