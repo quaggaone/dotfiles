@@ -14,5 +14,10 @@
     "files.associations": {
         "*.html": "html",
         "*.njk": "html"
-    }
+    },
+    "editor.fontFamily": "ZedMono Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.25,
+    "terminal.integrated.fontLigatures.enabled": true
 }
