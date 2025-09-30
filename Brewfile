@@ -8,7 +8,7 @@ cask "element"
 cask "signal"
 cask "discord"
 cask "microsoft-teams"
-cask "arc"
+# cask "arc"
 cask "firefox"
 
 mas "Dashlane", id: 517914548
@@ -178,3 +178,5 @@ cask "font-zed-mono-nerd-font"
 #####################
 
 vscode "mvllow.rose-pine"       # color theme
+vscode "REditorSupport.r"	# R lang support
+

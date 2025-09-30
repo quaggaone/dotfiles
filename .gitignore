@@ -7,6 +7,7 @@ secrets.sh
 /.config/karabiner/*
 !/.config/karabiner/karabiner.json
 /.config/raycast
+/.config/rstudio
 /.config/swiftpm
 /.config/github-copilot
 /.config/zed/prompts
