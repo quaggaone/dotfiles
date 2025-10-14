@@ -19,9 +19,9 @@ ITEM_DIR="$CONFIG_DIR/items"
 
 sketchybar --bar    position=top            \
                     height=32               \
-                    notch_display_height=40 \
+                    notch_display_height=38 \
                     notch_width=230         \
-                    blur_radius=80          \
+                    blur_radius=12          \
                     color=$COLOR_BAR        \
                     padding_left=12         \
                     padding_right=12
@@ -47,6 +47,20 @@ default=(
   label.padding_left=$PADDING_INNER
   label.padding_right=$PADDING_OUTER
   background.corner_radius=5
+  background.height=24
+)
+mono=(
+  padding_left=$MARGIN
+  padding_right=$MARGIN
+  icon.font="IBM Plex Mono:Medium:17.0"
+  label.font="IBM Plex Mono:Medium:14.0"
+  icon.color=$WHITE
+  label.color=$WHITE
+  icon.padding_left=$PADDING_OUTER
+  icon.padding_right=$PADDING_INNER
+  label.padding_left=$PADDING_INNER
+  label.padding_right=$PADDING_OUTER
+  background.corner_radius=0
   background.height=24
 )
 sketchybar --default "${default[@]}"
