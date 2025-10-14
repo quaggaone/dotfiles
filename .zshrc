@@ -5,9 +5,12 @@ source "$HOME/dotfiles/secrets.sh"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+# update PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 # ALIASES
 alias ls='eza'
-alias ll='eza -al --icons=auto --hyperlink --group-directories-first --git --time-style=long-iso --no-permissions --no-user'
+alias ll='eza -al --icons=auto --hyperlink --group-directories-first --git --time-style=long-iso --no-user'
 alias tree='eza -aT --group-directories-first --git-ignore'
 
 # old ls aliases

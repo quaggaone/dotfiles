@@ -21,11 +21,6 @@
     "light": "Zed Legacy: Rosé Pine Dawn",
     "dark": "Zed Legacy: Rosé Pine"
   },
-  "icon_theme": {
-    "mode": "system",
-    "light": "Colored Zed Icons Theme Light",
-    "dark": "Colored Zed Icons Theme Dark"
-  },
   "ui_font_family": "ZedMono Nerd Font Propo",
   "ui_font_size": 14,
   "buffer_font_family": "ZedMono Nerd Font Mono",
@@ -59,13 +54,13 @@
     "xml": true,
     "nunjucks": true,
     "typst": true,
+    "r": true,
+    "ruby": true,
     // HELPERS
     "emmet": true,
     // THEMES
     "zed-legacy-themes": true,
-    "rose-pine-theme": true,
-    // ICON THEMES
-    "colored-zed-icons-theme": true
+    "rose-pine-theme": true
   },
   "file_types": {
     "HTML": ["njk"]

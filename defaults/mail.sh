@@ -14,6 +14,7 @@ MAIL_DOMAIN="com.apple.mail"
 ## View
 set_defaults "$MAIL_DOMAIN" "ColumnLayoutMessageList" "bool" "true"
 set_defaults "$MAIL_DOMAIN" "BottomPreview" "bool" "false"
+# which colums are displayed can't be configured this way (assumption)
 
 # Settings
 ## Viewing
@@ -26,4 +27,3 @@ echo "Restarting Mail to apply changes..."
 killall Mail
 
 echo "Mail settings updated!"
-
