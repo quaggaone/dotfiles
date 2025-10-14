@@ -84,6 +84,8 @@ brew "fzf"		# fuzzy finder
 brew "node"		# maybe replace with nvm to manage node installs
 brew "pandoc"       # universal markup format converter
 brew "python"		# installs latest python because macOS doesn't
+brew "ruby"       # more modern version than macOS provides
+brew "solargraph"   # install ruby lsp (bypasses dependency requirements due to old system ruby)
 brew "starship"		# cross-shell prompt
 brew "uv"		# faster pyhton pip replacement
 brew "zoxide"		# cd replacement
