@@ -82,11 +82,14 @@ brew "composer"		# php dependency manager
 brew "eza"		# replacement for ls
 brew "fzf"		# fuzzy finder
 brew "node"		# maybe replace with nvm to manage node installs
+brew "pandoc"       # universal markup format converter
 brew "python"		# installs latest python because macOS doesn't
 brew "starship"		# cross-shell prompt
+brew "uv"		# faster pyhton pip replacement
 brew "zoxide"		# cd replacement
 
 cask "ghostty"
+cask "mactex"     # full tex distro; installs latex and pdflatex
 cask "mamp"
 cask "vscodium"
 cask "xcodes-app"
@@ -179,4 +182,3 @@ cask "font-zed-mono-nerd-font"
 
 vscode "mvllow.rose-pine"       # color theme
 vscode "REditorSupport.r"	# R lang support
-

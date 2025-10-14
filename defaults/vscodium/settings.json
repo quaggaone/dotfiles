@@ -19,5 +19,9 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.lineHeight": 1.25,
-    "terminal.integrated.fontLigatures.enabled": true
+    "terminal.integrated.fontLigatures.enabled": true,
+    // https://matthewdehaven.com/course-applied-economics-analysis-2025-Spring/guides/r-radian-terminal.html
+    "r.bracketedPaste": true,
+    "r.rterm.mac": "${userHome}/.local/bin/radian",
+    "r.plot.useHttpgd": true
 }
