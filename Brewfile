@@ -182,5 +182,6 @@ cask "font-zed-mono-nerd-font"
 # VSCODE EXTENSIONS #
 #####################
 
-vscode "mvllow.rose-pine"       # color theme
-vscode "REditorSupport.r"	# R lang support
+vscode "mvllow.rose-pine"           # color theme
+vscode "REditorSupport.r"           # R lang support
+vscode "myriad-dreamin.tinymist"    # integrated typst language service
