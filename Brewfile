@@ -93,6 +93,7 @@ brew "zoxide"		# cd replacement
 cask "ghostty"
 cask "mactex"     # full tex distro; installs latex and pdflatex
 cask "mamp"
+cask "quarto"     # replaces R knitr pipeline; more modern, more output types
 cask "vscodium"
 cask "xcodes-app"
 cask "zed"
@@ -185,3 +186,4 @@ cask "font-zed-mono-nerd-font"
 vscode "mvllow.rose-pine"           # color theme
 vscode "REditorSupport.r"           # R lang support
 vscode "myriad-dreamin.tinymist"    # integrated typst language service
+vscode "quarto.quarto"              # open-source scientific and technical publishing system
