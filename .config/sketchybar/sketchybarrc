@@ -49,6 +49,20 @@ default=(
   background.corner_radius=5
   background.height=24
 )
+condensed=(
+  padding_left=$MARGIN
+  padding_right=$MARGIN
+  icon.font="IBM Plex Sans Condensed:Medium:17.0"
+  label.font="IBM Plex Sans Condensed:Medium:16.0"
+  icon.color=$WHITE
+  label.color=$WHITE
+  icon.padding_left=$PADDING_OUTER
+  icon.padding_right=$PADDING_INNER
+  label.padding_left=$PADDING_INNER
+  label.padding_right=$PADDING_OUTER
+  background.corner_radius=0
+  background.height=24
+)
 mono=(
   padding_left=$MARGIN
   padding_right=$MARGIN
