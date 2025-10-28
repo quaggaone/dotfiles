@@ -71,11 +71,11 @@
     }
   },
   "lsp": {
-    "tinymist": {
-      "settings": {
-        "exportPdf": "onSave",
-        "outputPath": "$root/pdf/$dir/$name"
-      }
-    }
+    // "tinymist": {
+    //   "settings": {
+    //     "exportPdf": "onSave",
+    //     "outputPath": "$root/pdf/$dir/$name"
+    //   }
+    // }
   }
 }
