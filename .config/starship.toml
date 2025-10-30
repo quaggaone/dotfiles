@@ -19,3 +19,16 @@ $character"""
 [fill]
 symbol = ' '
 
+[[battery.display]]
+# default settings
+# shows from 0 to 10 percent
+threshold = 10
+style = 'bold red'
+
+[[battery.display]]
+# additional battery display settings
+# shows from 10 to 30 percent
+threshold = 30
+style = 'bold yellow'
+
+# 30 percent and over does not show the battery indicator
