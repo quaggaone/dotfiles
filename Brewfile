@@ -44,6 +44,8 @@ cask "raycast"
 #############
 
 # brew "htop"
+brew "pandoc"       # universal markup format converter
+brew "quaggaone/tap/panfd" # pandoc wrapper script for custom templates
 
 cask "karabiner-elements"
 cask "mac-mouse-fix"
@@ -78,22 +80,21 @@ mas "Scenecuts", id: 1540491573
 # DEV #
 #######
 
-brew "composer"		# php dependency manager
-brew "eza"		# replacement for ls
-brew "fzf"		# fuzzy finder
-brew "node"		# maybe replace with nvm to manage node installs
-brew "pandoc"       # universal markup format converter
-brew "python"		# installs latest python because macOS doesn't
-brew "ruby"       # more modern version than macOS provides
+brew "composer"     # php dependency manager
+brew "eza"          # replacement for ls
+brew "fzf"          # fuzzy finder
+brew "node"         # maybe replace with nvm to manage node installs
+brew "python"       # installs latest python because macOS doesn't
+# brew "ruby"         # more modern version than macOS provides
 brew "solargraph"   # install ruby lsp (bypasses dependency requirements due to old system ruby)
-brew "starship"		# cross-shell prompt
-brew "uv"		# faster pyhton pip replacement
-brew "zoxide"		# cd replacement
+brew "starship"     # cross-shell prompt
+brew "uv"           # faster pyhton pip replacement
+brew "zoxide"       # cd replacement
 
 cask "ghostty"
-cask "mactex"     # full tex distro; installs latex and pdflatex
+# cask "mactex"       # full tex distro; installs latex and pdflatex
 cask "mamp"
-cask "quarto"     # replaces R knitr pipeline; more modern, more output types
+cask "quarto"       # replaces R knitr pipeline; more modern, more output types
 cask "vscodium"
 cask "xcodes-app"
 cask "zed"
@@ -107,7 +108,7 @@ mas "Developer", id: 640199958
 # OFFICE #
 ##########
 
-brew "typst"		# markup-based typesetting system
+brew "typst"        # markup-based typesetting system
 
 cask "markedit"
 cask "notion"
