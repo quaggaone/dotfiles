@@ -23,5 +23,6 @@
     // https://matthewdehaven.com/course-applied-economics-analysis-2025-Spring/guides/r-radian-terminal.html
     "r.bracketedPaste": true,
     "r.rterm.mac": "${userHome}/.local/bin/radian",
-    "r.plot.useHttpgd": true
+    "r.plot.useHttpgd": true,
+    "markdown.preview.fontFamily": "IBM Plex Sans,-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif"
 }
