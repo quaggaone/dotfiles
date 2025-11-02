@@ -4,29 +4,31 @@
 # specifically this file: https://github.com/forteleaf/sketkchybar-with-aerospace/blob/main/sketchybar/items/spaces.sh
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
-  for i in $(aerospace list-workspaces --monitor $m); do
-    sid=$i
+  for i in $(aerospace list-workspaces --monitor $m --format "%{workspace}-%{monitor-appkit-nsscreen-screens-id}"); do
+    # custom aerospace list-workspaces format is required to make sketchybar monitor ids match up
+    # sid is space-id and mid is monitor-id seperated from aerospace output
+    sid=$(echo $i | awk -F'-' '{gsub(/^ *| *$/, "", $1); print $1}')
+    mid=$(echo $i | awk -F'-' '{gsub(/^ *| *$/, "", $2); print $2}')
     space=(
       space="$sid"
       icon="$sid"
+      icon.color=$WHITE
       icon.font="SF Pro:Expanded Medium:14.0"
       icon.padding_left=$PADDING_OUTER
-      icon.padding_right=$PADDING_OUTER
-      display=$m
+      icon.padding_right=$PADDING_INNER
+      display=$mid
       padding_left=$MARGIN
       padding_right=$MARGIN
-      label.padding_right=$PADDING_OUTER
+      label.padding_left=0
+      label.padding_right=10
       label.color=$WHITE
       label.font="sketchybar-app-font:Regular:16.0"
       label.y_offset=-1
       background.color=$COLOR_80
       background.border_color=$COLOR_60
-      script="$PLUGIN_DIR/aerospace.sh $sid"
+      script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+      click_script="aerospace workspace $sid" \
     )
-
-    sketchybar --add space space.$sid left \
-               --set space.$sid "${space[@]}" \
-               --subscribe space.$sid aerospace_workspace_change
 
     apps=$(aerospace list-windows --workspace $sid | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
@@ -34,13 +36,17 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
     if [ "${apps}" != "" ]; then
       while read -r app
       do
-        icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
+        icon_strip+="$($CONFIG_DIR/plugins/map_app_icon.sh "$app")"
       done <<< "${apps}"
     else
       icon_strip=" —"
     fi
 
-    sketchybar --set space.$sid label="$icon_strip"
+
+    sketchybar --add space space.$sid left \
+               --set space.$sid "${space[@]}" \
+               --set space.$sid label="$icon_strip" \
+               --subscribe space.$sid aerospace_workspace_change
   done
 
 # added flag `--empty no` to first list-workspaces command to reduce lines of code

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export WHITE=0xffffffff
+export BLACK=0xff000000
 
 # -- FD Colors --
 export COLOR_BAR=0x15808080

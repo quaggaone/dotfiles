@@ -180,6 +180,8 @@ cask "font-blex-mono-nerd-font"		# Nerd Font of IBM Plex Mono
 # cask "font-iosevka-nerd-font"
 cask "font-zed-mono-nerd-font"
 
+cask "font-sketchybar-app-font"   # menubar font for app icons
+
 #####################
 # VSCODE EXTENSIONS #
 #####################
