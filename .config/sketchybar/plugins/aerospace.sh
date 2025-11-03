@@ -16,10 +16,19 @@ reload_workspace_icon() {
       icon_strip+="$($CONFIG_DIR/plugins/map_app_icon.sh "$app")"
     done <<< "${apps}"
   else
-    icon_strip=" —"
+    icon_strip=""
   fi
 
-  sketchybar --animate sin 10 --set space.$1 label="$icon_strip"
+  # check icon_strip to determine if the workspace is empty
+  # if it is not empty: animate item, set icon_strip and display the space indicator
+  # if it is empty: hide the space indicator and don’t bother about the rest
+  if [ "${icon_strip}" != "" ]; then
+    sketchybar --animate sin 10 \
+               --set space.$1 label="$icon_strip" \
+                              display=1
+  else
+    sketchybar --set space.$1 display=0
+  fi
 }
 
 if [ "$SENDER" = "aerospace_workspace_change" ]; then
