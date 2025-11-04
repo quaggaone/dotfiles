@@ -98,6 +98,7 @@ source $ITEM_DIR/front_app.sh
 source "$ITEM_DIR/clock.sh"
 # source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/battery_time_remaining.sh"
 
 
 ## force all scripts to run the first time (never do this in a script)

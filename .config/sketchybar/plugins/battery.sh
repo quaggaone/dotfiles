@@ -45,10 +45,10 @@ fi
 
 
 sketchybar --set "$NAME" icon.drawing=off \
-    drawing=$ICON_DRAWING \
-    alias.color=$COLOR \
-    label="${PERCENTAGE}%" \
-    label.drawing=$LABEL_DRAWING \
-    label.color=$COLOR \
-    label.padding_left=0 \
-    background.color=$BG
+                         drawing=$ICON_DRAWING \
+                         alias.color=$COLOR \
+                         label="${PERCENTAGE}%" \
+                         label.drawing=$LABEL_DRAWING \
+                         label.color=$COLOR \
+                         label.padding_left=0 \
+                         background.color=$BG

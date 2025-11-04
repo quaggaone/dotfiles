@@ -267,6 +267,7 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
+# TODO ADD 'layout accordion horizontal' once https://github.com/nikitabobko/AeroSpace/issues/20 is fixed
 run = ['move-node-to-workspace X']
 
 [[on-window-detected]]
