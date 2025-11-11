@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+source "$CONFIG_DIR/colors.sh"
 source "$CONFIG_DIR/padding.sh"
 
 reload_workspace_icon() {
@@ -15,16 +16,16 @@ reload_workspace_icon() {
     icon_strip=""
   fi
 
-  # determine if this workspace is focused
+  # determine background color based on focus state
   if [ "$1" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
-    BACKGROUND_DRAWING="on"
+    BACKGROUND_COLOR=$COLOR_80
   else
-    BACKGROUND_DRAWING="off"
+    BACKGROUND_COLOR=$COLOR_80_TRANSPARENT
   fi
 
   # define property sets for showing and hiding workspaces
   PROPERTIES_SHOW=(
-    background.drawing=$BACKGROUND_DRAWING
+    background.color=$BACKGROUND_COLOR
     icon.drawing=on
     label.drawing=on
     icon.padding_left=$PADDING_OUTER
@@ -36,7 +37,7 @@ reload_workspace_icon() {
   )
 
   PROPERTIES_HIDE=(
-    background.drawing=$BACKGROUND_DRAWING
+    background.color=$BACKGROUND_COLOR
     icon.drawing=off
     label.drawing=off
     icon.padding_left=0
@@ -60,7 +61,7 @@ reload_workspace_icon() {
   fi
 
   # apply properties with animation
-  sketchybar --animate sin 10 --set space.$1 label="$LABEL" "${PROPERTIES[@]}"
+  sketchybar --animate sin 5 --set space.$1 label="$LABEL" "${PROPERTIES[@]}"
 }
 
 if [ "$SENDER" = "aerospace_workspace_change" ]; then
