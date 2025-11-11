@@ -2,7 +2,6 @@
     "editor.stickyTabStops": true,
     "workbench.preferredDarkColorTheme": "Rosé Pine",
     "workbench.preferredLightColorTheme": "Rosé Pine Dawn",
-    "workbench.iconTheme": "rose-pine-icons",
     "window.autoDetectColorScheme": true,
     "editor.wordWrap": "on",
     "editor.minimap.showSlider": "always",
