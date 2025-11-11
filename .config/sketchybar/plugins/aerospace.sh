@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-if [ "$1" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
-    sketchybar --set $NAME background.drawing=on
-else
-    sketchybar --set $NAME background.drawing=off
-fi
-
 reload_workspace_icon() {
   apps=$(aerospace list-windows --workspace "$1" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
@@ -19,15 +13,31 @@ reload_workspace_icon() {
     icon_strip=""
   fi
 
+  # determine if this workspace is focused
+  if [ "$1" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
+    BG_DRAWING="on"
+  else
+    BG_DRAWING="off"
+  fi
+
   # check icon_strip to determine if the workspace is empty
   # if it is not empty: animate item, set icon_strip and display the space indicator
-  # if it is empty: hide the space indicator and don’t bother about the rest
+  # if it is empty but focused: show with dash
+  # if it is empty and not focused: hide the space indicator
   if [ "${icon_strip}" != "" ]; then
     sketchybar --animate sin 10 \
                --set space.$1 label="$icon_strip" \
+                              background.drawing=$BG_DRAWING \
+                              display=1
+  elif [ "$1" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
+    sketchybar --animate sin 10 \
+               --set space.$1 label=" —" \
+                              background.drawing=$BG_DRAWING \
                               display=1
   else
-    sketchybar --set space.$1 display=0
+    sketchybar --animate sin 10 \
+               --set space.$1 background.drawing=$BG_DRAWING \
+                              display=0
   fi
 }
 

@@ -3,12 +3,23 @@
 # heavily inspired by: https://github.com/forteleaf/sketkchybar-with-aerospace
 # specifically this file: https://github.com/forteleaf/sketkchybar-with-aerospace/blob/main/sketchybar/items/spaces.sh
 
+# Get currently focused workspace on startup
+FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)
+
 for m in $(aerospace list-monitors | awk '{print $1}'); do
   for i in $(aerospace list-workspaces --monitor $m --format "%{workspace}-%{monitor-appkit-nsscreen-screens-id}"); do
     # custom aerospace list-workspaces format is required to make sketchybar monitor ids match up
     # sid is space-id and mid is monitor-id seperated from aerospace output
     sid=$(echo $i | awk -F'-' '{gsub(/^ *| *$/, "", $1); print $1}')
     mid=$(echo $i | awk -F'-' '{gsub(/^ *| *$/, "", $2); print $2}')
+
+    # Set background.drawing based on if this is the focused workspace
+    if [ "$sid" = "$FOCUSED_WORKSPACE" ]; then
+      BG_DRAWING="on"
+    else
+      BG_DRAWING="off"
+    fi
+
     space=(
       space="$sid"
       icon="$sid"
@@ -26,6 +37,7 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
       label.y_offset=-1
       background.color=$COLOR_80
       background.border_color=$COLOR_60
+      background.drawing=$BG_DRAWING
       script="$CONFIG_DIR/plugins/aerospace.sh $sid"
       click_script="aerospace workspace $sid" \
     )
