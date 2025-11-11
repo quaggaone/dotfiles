@@ -44,7 +44,7 @@ cask "raycast"
 #############
 
 # brew "htop"
-brew "pandoc"       # universal markup format converter
+brew "pandoc"              # universal markup format converter
 brew "quaggaone/tap/panfd" # pandoc wrapper script for custom templates
 
 cask "karabiner-elements"
@@ -52,6 +52,8 @@ cask "mac-mouse-fix"
 # cask "macs-fan-control"
 # cask "monitorcontrol"
 
+cask "claude"
+cask "claude-code"
 cask "cleanmymac"
 cask "synology-drive"
 cask "cyberduck"
@@ -61,7 +63,7 @@ cask "yubico-authenticator"
 cask "utm"
 cask "imageoptim"
 cask "obs"
-cask "ollama"
+cask "ollama-app"
 
 mas "AudioSwitcher", id: 561712678
 mas "AusweisApp", id: 948660805
@@ -190,3 +192,6 @@ vscode "mvllow.rose-pine"           # color theme
 vscode "REditorSupport.r"           # R lang support
 vscode "myriad-dreamin.tinymist"    # integrated typst language service
 vscode "quarto.quarto"              # open-source scientific and technical publishing system
+vscode "anthropic.claude-code"      # claude code with gui
+vscode "openai.chatgpt"             # codex with gui
+
