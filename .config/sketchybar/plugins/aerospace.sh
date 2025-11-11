@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$CONFIG_DIR/padding.sh"
+
 reload_workspace_icon() {
   apps=$(aerospace list-windows --workspace "$1" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
@@ -23,21 +25,43 @@ reload_workspace_icon() {
   # check icon_strip to determine if the workspace is empty
   # if it is not empty: animate item, set icon_strip and display the space indicator
   # if it is empty but focused: show with dash
-  # if it is empty and not focused: hide the space indicator
+  # if it is empty and not focused: shrink to invisible
   if [ "${icon_strip}" != "" ]; then
     sketchybar --animate sin 10 \
                --set space.$1 label="$icon_strip" \
                               background.drawing=$BG_DRAWING \
-                              display=1
+                              icon.drawing=on \
+                              label.drawing=on \
+                              icon.padding_left=$PADDING_OUTER \
+                              icon.padding_right=$PADDING_INNER \
+                              label.padding_left=0 \
+                              label.padding_right=10 \
+                              padding_left=$MARGIN \
+                              padding_right=$MARGIN
   elif [ "$1" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
     sketchybar --animate sin 10 \
                --set space.$1 label=" —" \
                               background.drawing=$BG_DRAWING \
-                              display=1
+                              icon.drawing=on \
+                              label.drawing=on \
+                              icon.padding_left=$PADDING_OUTER \
+                              icon.padding_right=$PADDING_INNER \
+                              label.padding_left=0 \
+                              label.padding_right=10 \
+                              padding_left=$MARGIN \
+                              padding_right=$MARGIN
   else
     sketchybar --animate sin 10 \
-               --set space.$1 background.drawing=$BG_DRAWING \
-                              display=0
+               --set space.$1 label="" \
+                              background.drawing=$BG_DRAWING \
+                              icon.drawing=off \
+                              label.drawing=off \
+                              icon.padding_left=0 \
+                              icon.padding_right=0 \
+                              label.padding_left=0 \
+                              label.padding_right=0 \
+                              padding_left=0 \
+                              padding_right=0
   fi
 }
 

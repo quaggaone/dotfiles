@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/padding.sh"
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items"
@@ -14,11 +15,6 @@ sketchybar --bar    position=top            \
                     color=$COLOR_BAR        \
                     padding_left=12         \
                     padding_right=12
-
-## changing defaults
-export PADDING_OUTER=5
-export PADDING_INNER=4
-export MARGIN=2
 
 default=(
   padding_left=$MARGIN

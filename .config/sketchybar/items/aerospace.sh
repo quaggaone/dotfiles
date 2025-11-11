@@ -63,7 +63,14 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
 
 # added flag `--empty no` to first list-workspaces command to reduce lines of code
   for i in $(aerospace list-workspaces --monitor $m --empty); do
-    sketchybar --set space.$i display=0
+    sketchybar --set space.$i icon.padding_left=0 \
+                              icon.padding_right=0 \
+                              label.padding_left=0 \
+                              label.padding_right=0 \
+                              padding_left=0 \
+                              padding_right=0 \
+                              icon.drawing=off \
+                              label.drawing=off
   done
 
 done
