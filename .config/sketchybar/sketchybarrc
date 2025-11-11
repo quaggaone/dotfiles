@@ -68,6 +68,11 @@ sketchybar --default "${default[@]}"
 
 sketchybar --add event aerospace_workspace_change
 
+## aerospace coordinator (handles workspace change events - invisible, logic only)
+sketchybar --add item aerospace.coordinator popup \
+           --set aerospace.coordinator script="$PLUGIN_DIR/aerospace-coordinator.sh" \
+           --subscribe aerospace.coordinator aerospace_workspace_change
+
 ## left items
 source $ITEM_DIR/aerospace.sh
 

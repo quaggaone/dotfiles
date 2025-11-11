@@ -57,8 +57,7 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
 
     sketchybar --add space space.$sid left \
                --set space.$sid "${space[@]}" \
-               --set space.$sid label="$icon_strip" \
-               --subscribe space.$sid aerospace_workspace_change
+               --set space.$sid label="$icon_strip"
   done
 
 # added flag `--empty no` to first list-workspaces command to reduce lines of code
