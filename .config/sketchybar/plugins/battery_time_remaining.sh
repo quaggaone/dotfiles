@@ -3,7 +3,7 @@
 source "$CONFIG_DIR/colors.sh"
 
 TIME_REMAINING="$(pmset -g batt | grep -Eo "\d+:\d+ remaining" | cut -d' ' -f1)"
-
+# TODO set label to N/A if pattern is not found
 
 sketchybar --set "$NAME" icon.drawing=off \
                          drawing=on \
