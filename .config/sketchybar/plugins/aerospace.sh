@@ -17,52 +17,50 @@ reload_workspace_icon() {
 
   # determine if this workspace is focused
   if [ "$1" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
-    BG_DRAWING="on"
+    BACKGROUND_DRAWING="on"
   else
-    BG_DRAWING="off"
+    BACKGROUND_DRAWING="off"
   fi
 
-  # check icon_strip to determine if the workspace is empty
-  # if it is not empty: animate item, set icon_strip and display the space indicator
-  # if it is empty but focused: show with dash
-  # if it is empty and not focused: shrink to invisible
+  # define property sets for showing and hiding workspaces
+  PROPERTIES_SHOW=(
+    background.drawing=$BACKGROUND_DRAWING
+    icon.drawing=on
+    label.drawing=on
+    icon.padding_left=$PADDING_OUTER
+    icon.padding_right=$PADDING_INNER
+    label.padding_left=0
+    label.padding_right=10
+    padding_left=$MARGIN
+    padding_right=$MARGIN
+  )
+
+  PROPERTIES_HIDE=(
+    background.drawing=$BACKGROUND_DRAWING
+    icon.drawing=off
+    label.drawing=off
+    icon.padding_left=0
+    icon.padding_right=0
+    label.padding_left=0
+    label.padding_right=0
+    padding_left=0
+    padding_right=0
+  )
+
+  # determine label and properties based on workspace state
   if [ "${icon_strip}" != "" ]; then
-    sketchybar --animate sin 10 \
-               --set space.$1 label="$icon_strip" \
-                              background.drawing=$BG_DRAWING \
-                              icon.drawing=on \
-                              label.drawing=on \
-                              icon.padding_left=$PADDING_OUTER \
-                              icon.padding_right=$PADDING_INNER \
-                              label.padding_left=0 \
-                              label.padding_right=10 \
-                              padding_left=$MARGIN \
-                              padding_right=$MARGIN
+    LABEL="$icon_strip"
+    PROPERTIES=("${PROPERTIES_SHOW[@]}")
   elif [ "$1" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
-    sketchybar --animate sin 10 \
-               --set space.$1 label=" —" \
-                              background.drawing=$BG_DRAWING \
-                              icon.drawing=on \
-                              label.drawing=on \
-                              icon.padding_left=$PADDING_OUTER \
-                              icon.padding_right=$PADDING_INNER \
-                              label.padding_left=0 \
-                              label.padding_right=10 \
-                              padding_left=$MARGIN \
-                              padding_right=$MARGIN
+    LABEL=" —"
+    PROPERTIES=("${PROPERTIES_SHOW[@]}")
   else
-    sketchybar --animate sin 10 \
-               --set space.$1 label="" \
-                              background.drawing=$BG_DRAWING \
-                              icon.drawing=off \
-                              label.drawing=off \
-                              icon.padding_left=0 \
-                              icon.padding_right=0 \
-                              label.padding_left=0 \
-                              label.padding_right=0 \
-                              padding_left=0 \
-                              padding_right=0
+    LABEL=""
+    PROPERTIES=("${PROPERTIES_HIDE[@]}")
   fi
+
+  # apply properties with animation
+  sketchybar --animate sin 10 --set space.$1 label="$LABEL" "${PROPERTIES[@]}"
 }
 
 if [ "$SENDER" = "aerospace_workspace_change" ]; then
