@@ -3,6 +3,9 @@
 # heavily inspired by: https://github.com/forteleaf/sketkchybar-with-aerospace
 # specifically this file: https://github.com/forteleaf/sketkchybar-with-aerospace/blob/main/sketchybar/items/spaces.sh
 
+source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/padding.sh"
+
 # Get currently focused workspace on startup
 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)
 
@@ -13,11 +16,11 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
     sid=$(echo $i | awk -F'-' '{gsub(/^ *| *$/, "", $1); print $1}')
     mid=$(echo $i | awk -F'-' '{gsub(/^ *| *$/, "", $2); print $2}')
 
-    # Set background.drawing based on if this is the focused workspace
+    # set background color based on if this is the focused workspace
     if [ "$sid" = "$FOCUSED_WORKSPACE" ]; then
-      BG_DRAWING="on"
+      BG_COLOR=$COLOR_80
     else
-      BG_DRAWING="off"
+      BG_COLOR=$COLOR_80_TRANSPARENT
     fi
 
     space=(
@@ -35,9 +38,9 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
       label.color=$WHITE
       label.font="sketchybar-app-font:Regular:16.0"
       label.y_offset=-1
-      background.color=$COLOR_80
+      background.color=$BG_COLOR
       background.border_color=$COLOR_60
-      background.drawing=$BG_DRAWING
+      background.drawing=on
       script="$CONFIG_DIR/plugins/aerospace.sh $sid"
       click_script="aerospace workspace $sid" \
     )

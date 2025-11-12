@@ -67,7 +67,11 @@ reload_workspace_icon() {
 
   # determine background color based on focus state
   # focused workspace gets visible background, others get transparent
-  if [ "$1" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
+  # if AEROSPACE_FOCUSED_WORKSPACE is not set (e.g., during initial --update),
+  # query aerospace directly to determine the focused workspace
+  FOCUSED="${AEROSPACE_FOCUSED_WORKSPACE:-$(aerospace list-workspaces --focused)}"
+
+  if [ "$1" = "$FOCUSED" ]; then
     BACKGROUND_COLOR=$COLOR_80
   else
     BACKGROUND_COLOR=$COLOR_80_TRANSPARENT
