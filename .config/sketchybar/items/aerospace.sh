@@ -5,8 +5,9 @@
 
 source "$CONFIG_DIR/colors.sh"
 source "$CONFIG_DIR/padding.sh"
+source "$CONFIG_DIR/utils/aerospace-functions.sh"
 
-# Get currently focused workspace on startup
+# get currently focused workspace on startup
 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
@@ -45,22 +46,20 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
       click_script="aerospace workspace $sid" \
     )
 
-    apps=$(aerospace list-windows --workspace $sid | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
+    # build icon strip from workspace apps
+    icon_strip=$(build_icon_strip "$sid")
 
-    icon_strip=" "
-    if [ "${apps}" != "" ]; then
-      while read -r app
-      do
-        icon_strip+="$($CONFIG_DIR/plugins/map_app_icon.sh "$app")"
-      done <<< "${apps}"
+    # show dash for empty workspaces during initial setup
+    if [ "${icon_strip}" = "" ]; then
+      label=" —"
     else
-      icon_strip=" —"
+      label="$icon_strip"
     fi
 
 
     sketchybar --add space space.$sid left \
                --set space.$sid "${space[@]}" \
-               --set space.$sid label="$icon_strip"
+               --set space.$sid label="$label"
   done
 
 # added flag `--empty no` to first list-workspaces command to reduce lines of code

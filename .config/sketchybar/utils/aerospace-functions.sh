@@ -40,17 +40,16 @@ else
 fi
 
 # ============================================================================
-# workspace icon reload function
+# helper function: build icon strip from workspace apps
 # ============================================================================
-# updates a single workspace's display based on its current state
 # arguments:
-#   $1 - workspace ID to reload
-# behavior:
-#   - queries aerospace for windows in the workspace
-#   - builds icon strip from app names (or shows dash if empty)
-#   - applies appropriate styling (highlight if focused, hide if empty+unfocused)
+#   $1 - workspace ID
+# returns:
+#   icon_strip - string with app icons or empty string
 
-reload_workspace_icon() {
+build_icon_strip() {
+  local apps icon_strip
+
   # get list of app names in this workspace
   apps=$(aerospace list-windows --workspace "$1" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
@@ -64,6 +63,24 @@ reload_workspace_icon() {
   else
     icon_strip=""  # empty workspace
   fi
+
+  echo "$icon_strip"
+}
+
+# ============================================================================
+# workspace icon reload function
+# ============================================================================
+# updates a single workspace's display based on its current state
+# arguments:
+#   $1 - workspace ID to reload
+# behavior:
+#   - queries aerospace for windows in the workspace
+#   - builds icon strip from app names (or shows dash if empty)
+#   - applies appropriate styling (highlight if focused, hide if empty+unfocused)
+
+reload_workspace_icon() {
+  # build icon strip from workspace apps
+  icon_strip=$(build_icon_strip "$1")
 
   # determine background color based on focus state
   # focused workspace gets visible background, others get transparent
