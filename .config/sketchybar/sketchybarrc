@@ -76,24 +76,8 @@ sketchybar --add item aerospace.coordinator popup \
 ## left items
 source $ITEM_DIR/aerospace.sh
 
-# for sid in $(aerospace list-workspaces --all); do
-#     sketchybar --add item space.old.$sid left \
-#         --subscribe space.old.$sid aerospace_workspace_change \
-#         --set space.old.$sid \
-#         background.color=$COLOR_80 \
-#         background.drawing=off \
-#         icon.drawing=off \
-#         label.padding_left=$PADDING_OUTER \
-#         label.color=$COLOR_10 \
-#         label="$sid" \
-#         click_script="aerospace workspace $sid" \
-#         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
-# done
-
-
 ## q items - left of notch
 source $ITEM_DIR/front_app.sh
-
 
 ## right items
 source "$ITEM_DIR/clock.sh"
