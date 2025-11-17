@@ -5,6 +5,8 @@ macos-titlebar-proxy-icon = hidden
 
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = cmd+r=reload_config
+# insert new line with shift+enter
+keybind = shift+enter=text:\x1b\r
 
 font-size =                 14
 font-family =               ZedMono Nerd Font Mono
@@ -12,3 +14,4 @@ font-style =
 font-style-bold =           ExtraBold
 font-style-italic =         Oblique
 font-style-bold-italic =    ExtraBold Oblique
+
