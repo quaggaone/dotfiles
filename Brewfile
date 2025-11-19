@@ -85,6 +85,7 @@ mas "Scenecuts", id: 1540491573
 brew "composer"     # php dependency manager
 brew "eza"          # replacement for ls
 brew "fzf"          # fuzzy finder
+brew "git-delta"    # syntax-highlighting pager for git, diff, and grep
 brew "node"         # maybe replace with nvm to manage node installs
 brew "python"       # installs latest python because macOS doesn't
 # brew "ruby"         # more modern version than macOS provides
