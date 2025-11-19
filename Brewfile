@@ -91,6 +91,7 @@ brew "python"       # installs latest python because macOS doesn't
 # brew "ruby"         # more modern version than macOS provides
 brew "solargraph"   # install ruby lsp (bypasses dependency requirements due to old system ruby)
 brew "starship"     # cross-shell prompt
+brew "gromgit/brewtils/taproom"    # TUI for exploring homebrew formulae and casks
 brew "uv"           # faster pyhton pip replacement
 brew "zoxide"       # cd replacement
 
