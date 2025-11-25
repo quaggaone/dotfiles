@@ -27,9 +27,6 @@ set_defaults "$SAFARI_DOMAIN.SandboxBroker" "AlwaysPromptForDownloadFolder" "boo
 
 set_defaults "$SAFARI_DOMAIN" "AutoOpenSafeDownloads" "bool" "false"	# open "safe" files after downloading
 
-### Tabs
-set_defaults "$SAFARI_DOMAIN" "ShowStandaloneTabBar" "bool" "false"	# compact tab bar
-
 ### AutoFill
 set_defaults "$SAFARI_DOMAIN" "AutoFillFromAddressBook" "bool" "false"	# autofill from my contacts
 
