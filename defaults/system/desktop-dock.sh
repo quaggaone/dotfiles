@@ -164,6 +164,7 @@ set_defaults "com.apple.dock" "wvous-br-corner" "int" "0"
 
 # Appearance section
 set_defaults "-g" "AppleReduceDesktopTinting" "bool" "true"            # Disallow wallpaper tinting in windows
+set_defaults "-g" "SLSMenuBarUseBlurredAppearance" "bool" "true"       # Enable blurred menu bar appearance
 
 
 # Restart Dock to apply changes
