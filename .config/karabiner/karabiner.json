@@ -4,6 +4,129 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Caps Lock → Escape (tap) / Right Option/Mod3 (hold)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            { "input_source_id": "^org\\.sil\\.ukelele.keyboardlayout\\.neo.*$" },
+                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschNeo2$" },
+                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschBone$" },
+                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschNeoQwertz$" },
+                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschADNW$" }
+                                        ],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 100
+                                },
+                                "to": [{ "key_code": "right_option" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tab → Tab (tap) / Hyper Key (hold)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            { "input_source_id": "^org\\.sil\\.ukelele.keyboardlayout\\.neo.*$" },
+                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschNeo2$" },
+                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschBone$" },
+                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschNeoQwertz$" },
+                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschADNW$" }
+                                        ],
+                                        "type": "input_source_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 120
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_control", "left_option", "left_command"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "tab" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Left Option → cmd+ctrl+alt (⌃⌥⌘) except with left_cmd",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "left_command_pressed",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_option",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper_left_option",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "key_code": "left_control",
+                                        "modifiers": ["left_option", "left_command"]
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hyper_left_option",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": { "key_code": "left_command" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "left_command_pressed",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "key_code": "left_command" }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "left_command_pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Neo2 mod 4: Map ↖ to Home and ↘︎ to End in terminal apps, remote desktop apps and virtual machines.  (move this rule above other Neo2 rules).",
                         "manipulators": [
                             {
@@ -155,7 +278,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -191,7 +317,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -227,7 +356,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -263,7 +395,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -299,7 +434,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -335,7 +473,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -371,7 +512,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -407,7 +551,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -443,7 +590,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -479,7 +629,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -515,7 +668,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -551,7 +707,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -587,7 +746,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -623,7 +785,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -659,7 +824,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -695,7 +863,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -731,7 +902,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -767,7 +941,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -803,7 +980,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -839,7 +1019,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -875,7 +1058,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -911,7 +1097,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -947,7 +1136,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -983,7 +1175,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1019,7 +1214,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1055,7 +1253,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1091,7 +1292,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1127,7 +1331,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1163,7 +1370,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1199,7 +1409,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1235,7 +1448,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1271,7 +1487,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1312,7 +1531,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1348,7 +1570,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1384,7 +1609,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1420,7 +1648,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1456,7 +1687,10 @@
                                             "org.gnu.Emacs",
                                             "com.googlecode.iterm2",
                                             "dev.warp.Warp-Stable",
-                                            "com.github.wez.wezterm"
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty",
+                                            "com.apple.MobileSMS",
+                                            "net.whatsapp.WhatsApp"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
