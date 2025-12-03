@@ -34,6 +34,9 @@ alias bc='brew upgrade -ng'
 alias bg='brew upgrade' # --no-quarantine'
 alias bg-all='brew upgrade -g' # --no-quarantine'
 
+## PYTHON
+alias py-venv='source "$HOME/.local/share/venvs/python-general/bin/activate"'
+
 # homebrew completions
 autoload -Uz compinit
 compinit
