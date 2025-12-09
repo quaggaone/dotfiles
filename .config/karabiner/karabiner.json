@@ -281,7 +281,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -320,7 +321,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -359,7 +361,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -398,7 +401,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -437,7 +441,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -476,7 +481,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -515,7 +521,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -554,7 +561,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -593,7 +601,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -632,7 +641,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -671,7 +681,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -710,7 +721,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -749,7 +761,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -788,7 +801,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -827,7 +841,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -866,7 +881,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -905,7 +921,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -944,7 +961,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -983,7 +1001,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1022,7 +1041,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1061,7 +1081,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1100,7 +1121,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1139,7 +1161,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1178,7 +1201,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1217,7 +1241,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1256,7 +1281,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1295,7 +1321,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1334,7 +1361,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1373,7 +1401,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1412,7 +1441,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1451,7 +1481,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1490,7 +1521,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1534,7 +1566,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1573,7 +1606,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1612,7 +1646,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1651,7 +1686,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1690,7 +1726,8 @@
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty",
                                             "com.apple.MobileSMS",
-                                            "net.whatsapp.WhatsApp"
+                                            "net.whatsapp.WhatsApp",
+                                            "com.goodnotesapp.x"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
