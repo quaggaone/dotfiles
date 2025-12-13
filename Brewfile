@@ -44,8 +44,10 @@ cask "raycast"
 #############
 
 # brew "htop"
+brew "mistral-vibe"
 brew "pandoc"              # universal markup format converter
 brew "quaggaone/tap/panfd" # pandoc wrapper script for custom templates
+brew "ykman"               # yubikey utility
 
 cask "karabiner-elements"
 cask "mac-mouse-fix"
@@ -55,15 +57,15 @@ cask "mac-mouse-fix"
 cask "claude"
 cask "claude-code"
 cask "cleanmymac"
-cask "synology-drive"
 cask "cyberduck"
 cask "iina"
-cask "yubico-authenticator"
-# cask "yubico-yubikey-manager"
-cask "utm"
 cask "imageoptim"
 cask "obs"
 cask "ollama-app"
+cask "synology-drive"
+cask "utm"
+cask "yubico-authenticator"
+# cask "yubico-yubikey-manager"
 
 mas "AudioSwitcher", id: 561712678
 mas "AusweisApp", id: 948660805
