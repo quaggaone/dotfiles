@@ -31,38 +31,6 @@
                         ]
                     },
                     {
-                        "description": "Tab → Tab (tap) / Hyper Key (hold)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "input_sources": [
-                                            { "input_source_id": "^org\\.sil\\.ukelele.keyboardlayout\\.neo.*$" },
-                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschNeo2$" },
-                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschBone$" },
-                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschNeoQwertz$" },
-                                            { "input_source_id": "^org\\.unknown\\.keylayout\\.DeutschADNW$" }
-                                        ],
-                                        "type": "input_source_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 120 },
-                                "to": [
-                                    {
-                                        "key_code": "left_shift",
-                                        "modifiers": ["left_control", "left_option", "left_command"]
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "tab" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Hyper + Navigation/Delete → Plain Option",
                         "enabled": true,
                         "manipulators": [
