@@ -38,6 +38,7 @@ set_defaults "$SAFARI_DOMAIN" "IncludeDevelopMenu" "bool" "true"	# Show Develope
 set_defaults "$SAFARI_DOMAIN" "EnableEnhancedPrivacyInRegularBrowsing" "bool" "true"	# use advandved tracking prevention in all browsing modes
 set_defaults "$SAFARI_DOMAIN" "WebKitPreferences.privateClickMeasurementEnabled" "bool" "false"		# allow privacy-preserving measurement of ad-effectiveness
 set_defaults "$SAFARI_DOMAIN" "ReadingListSaveArticlesOfflineAutomatically" "bool" "true"		# reading list: save articles for offline reading
+set_defaults "$SAFARI_DOMAIN" "WebKitExperimentalPreferPageRenderingUpdatesNear60FPSEnabled" "bool" "false"		# enables 120hz rendering
 
 # Restart Safari to apply changes
 echo "Restarting Safari to apply changes..."
