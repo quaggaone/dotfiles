@@ -23,5 +23,6 @@
     "r.bracketedPaste": true,
     "r.rterm.mac": "${userHome}/.local/bin/radian",
     "r.plot.useHttpgd": true,
-    "markdown.preview.fontFamily": "IBM Plex Sans,-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif"
+    "markdown.preview.fontFamily": "IBM Plex Sans,-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+    "claudeCode.useTerminal": true
 }
