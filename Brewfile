@@ -139,6 +139,7 @@ mas "Microsoft Outlook", id: 985367838
 ###############
 
 cask "adobe-creative-cloud"
+cask "affinity"
 
 mas "Affinity Designer 2", id: 1616831348
 mas "Affinity Photo 2", id: 1616822987
