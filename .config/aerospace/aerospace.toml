@@ -1,3 +1,20 @@
+# ============================================================================
+# AeroSpace window manager configuration
+# ============================================================================
+# tiling window manager for macOS. manages workspaces across monitors and
+# handles automatic app placement, keybindings, and layout rules.
+#
+# workspaces are purpose-driven: numbered (1-6) for general use, named for
+# fixed contexts — C: communication, M: media, N: notes, X: mail.
+# all keybindings use ctrl+alt+cmd as the base modifier — mapped to a single
+# Hyper key via Karabiner.
+#
+# SKETCHYBAR INTEGRATION
+# the menubar reflects workspace state in real time. switching workspaces,
+# moving windows, and opening or closing apps all notify sketchybar to
+# redraw the affected workspace indicators automatically.
+# ============================================================================
+
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
@@ -18,7 +35,7 @@ after-startup-command = ['exec-and-forget sketchybar']
 exec-on-workspace-change = [
     '/bin/bash',
     '-c',
-    'sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE',
+    'sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES="$AEROSPACE_PREV_WORKSPACE $AEROSPACE_FOCUSED_WORKSPACE"',
 ]
 
 # Start AeroSpace at login
@@ -49,7 +66,10 @@ default-root-container-orientation = 'auto'
 # on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # or
 # Mouse lazily follows any focus (window or workspace)
-on-focus-changed = ['move-mouse window-lazy-center']
+on-focus-changed = [
+  'move-mouse window-lazy-center',
+  "exec-and-forget /bin/bash -c 'sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=$(aerospace list-workspaces --focused)'",
+]
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -162,37 +182,37 @@ ctrl-alt-cmd-x = 'workspace X' # mail
 # ctrl-alt-cmd-z = 'workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-ctrl-alt-cmd-shift-1 = 'move-node-to-workspace 1'
-ctrl-alt-cmd-shift-2 = 'move-node-to-workspace 2'
-ctrl-alt-cmd-shift-3 = 'move-node-to-workspace 3'
-ctrl-alt-cmd-shift-4 = 'move-node-to-workspace 4'
-ctrl-alt-cmd-shift-5 = 'move-node-to-workspace 5'
-ctrl-alt-cmd-shift-6 = 'move-node-to-workspace 6'
-# ctrl-alt-cmd-shift-7 = 'move-node-to-workspace 7'
-# ctrl-alt-cmd-shift-8 = 'move-node-to-workspace 8'
-# ctrl-alt-cmd-shift-9 = 'move-node-to-workspace 9'
-# ctrl-alt-cmd-shift-a = 'move-node-to-workspace A'
-# ctrl-alt-cmd-shift-b = 'move-node-to-workspace B'
-ctrl-alt-cmd-shift-c = 'move-node-to-workspace C'
-# ctrl-alt-cmd-shift-d = 'move-node-to-workspace D'
-# ctrl-alt-cmd-shift-e = 'move-node-to-workspace E'
-# ctrl-alt-cmd-shift-f = 'move-node-to-workspace F'
-# ctrl-alt-cmd-shift-g = 'move-node-to-workspace G'
-# ctrl-alt-cmd-shift-i = 'move-node-to-workspace I'
-ctrl-alt-cmd-shift-m = 'move-node-to-workspace M'
-ctrl-alt-cmd-shift-n = 'move-node-to-workspace N'
-# ctrl-alt-cmd-shift-o = 'move-node-to-workspace O'
-# ctrl-alt-cmd-shift-p = 'move-node-to-workspace P'
-# ctrl-alt-cmd-shift-q = 'move-node-to-workspace Q'
-# ctrl-alt-cmd-shift-r = 'move-node-to-workspace R'
-# ctrl-alt-cmd-shift-s = 'move-node-to-workspace S'
-# ctrl-alt-cmd-shift-t = 'move-node-to-workspace T'
-# ctrl-alt-cmd-shift-u = 'move-node-to-workspace U'
-# ctrl-alt-cmd-shift-v = 'move-node-to-workspace V'
-# ctrl-alt-cmd-shift-w = 'move-node-to-workspace W'
-ctrl-alt-cmd-shift-x = 'move-node-to-workspace X'
-# ctrl-alt-cmd-shift-y = 'move-node-to-workspace Y'
-# ctrl-alt-cmd-shift-z = 'move-node-to-workspace Z'
+ctrl-alt-cmd-shift-1 = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh 1'
+ctrl-alt-cmd-shift-2 = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh 2'
+ctrl-alt-cmd-shift-3 = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh 3'
+ctrl-alt-cmd-shift-4 = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh 4'
+ctrl-alt-cmd-shift-5 = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh 5'
+ctrl-alt-cmd-shift-6 = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh 6'
+# ctrl-alt-cmd-shift-7 = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh 7'
+# ctrl-alt-cmd-shift-8 = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh 8'
+# ctrl-alt-cmd-shift-9 = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh 9'
+# ctrl-alt-cmd-shift-a = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh A'
+# ctrl-alt-cmd-shift-b = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh B'
+ctrl-alt-cmd-shift-c = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh C'
+# ctrl-alt-cmd-shift-d = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh D'
+# ctrl-alt-cmd-shift-e = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh E'
+# ctrl-alt-cmd-shift-f = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh F'
+# ctrl-alt-cmd-shift-g = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh G'
+# ctrl-alt-cmd-shift-i = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh I'
+ctrl-alt-cmd-shift-m = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh M'
+ctrl-alt-cmd-shift-n = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh N'
+# ctrl-alt-cmd-shift-o = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh O'
+# ctrl-alt-cmd-shift-p = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh P'
+# ctrl-alt-cmd-shift-q = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh Q'
+# ctrl-alt-cmd-shift-r = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh R'
+# ctrl-alt-cmd-shift-s = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh S'
+# ctrl-alt-cmd-shift-t = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh T'
+# ctrl-alt-cmd-shift-u = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh U'
+# ctrl-alt-cmd-shift-v = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh V'
+# ctrl-alt-cmd-shift-w = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh W'
+ctrl-alt-cmd-shift-x = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh X'
+# ctrl-alt-cmd-shift-y = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh Y'
+# ctrl-alt-cmd-shift-z = 'exec-and-forget ~/.config/aerospace/move-and-notify.sh Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 ctrl-alt-cmd-tab = 'workspace-back-and-forth'
@@ -269,36 +289,36 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = ['move-node-to-workspace X', 'layout accordion horizontal']
+run = ['move-node-to-workspace X', 'layout accordion horizontal', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=X']
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
-run = ['move-node-to-workspace C']
+run = ['move-node-to-workspace C', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=C']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
-run = ['move-node-to-workspace C']
+run = ['move-node-to-workspace C', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=C']
 
 [[on-window-detected]]
 if.app-id = 'org.whispersystems.signal-desktop'
-run = ['move-node-to-workspace C']
+run = ['move-node-to-workspace C', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=C']
 
 [[on-window-detected]]
 if.app-id = 'im.riot.app'
-run = ['move-node-to-workspace C']
+run = ['move-node-to-workspace C', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=C']
 
 [[on-window-detected]]
 if.app-id = 'com.reederapp.5.macOS'
-run = ['move-node-to-workspace M']
+run = ['move-node-to-workspace M', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=M']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Music'
-run = ['move-node-to-workspace M']
+run = ['move-node-to-workspace M', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=M']
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = ['move-node-to-workspace N']
+run = ['move-node-to-workspace N', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=N']
 
 [[on-window-detected]]
 if.app-id = 'notion.id'
-run = ['move-node-to-workspace N']
+run = ['move-node-to-workspace N', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=N']

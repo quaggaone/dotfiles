@@ -4,7 +4,7 @@
 # sketchybar AeroSpace shared functions
 # ============================================================================
 # this file contains reusable functions for the AeroSpace integration.
-# sourced by both the coordinator and individual workspace scripts.
+# sourced by both the event handler and individual workspace scripts.
 # ============================================================================
 
 # error handling and logging
@@ -128,7 +128,7 @@ reload_workspace_icon() {
   if [ "${icon_strip}" != "" ]; then
     LABEL="$icon_strip"
     PROPERTIES=("${PROPERTIES_SHOW[@]}")
-  elif [ "$1" = "$AEROSPACE_FOCUSED_WORKSPACE" ]; then
+  elif [ "$1" = "$FOCUSED" ]; then
     LABEL=" —"
     PROPERTIES=("${PROPERTIES_SHOW[@]}")
   else

@@ -27,8 +27,19 @@
     - Touch ID settings
     - iCloud settings (Private Relay etc.)
     - Wallet & Apple Pay
+    - App Store: disable In-App Ratings & Reviews
 - Copy SSH config and keys into `~/.ssh` folder
 - Configure `~/.gitconfig`
+
+## AeroSpace
+
+Tiling window manager for macOS. Manages workspaces across monitors and handles automatic app placement, keybindings, and layout rules.
+
+Workspaces are purpose-driven: numbered (1–6) for general use, named for fixed contexts — C: communication, M: media, N: notes, X: mail. All keybindings use `ctrl+alt+cmd` as the base modifier, mapped to a single Hyper key via Karabiner-Elements.
+
+### Sketchybar integration
+
+The menubar reflects workspace state in real time. Switching workspaces, moving windows, and opening or closing apps all notify Sketchybar to redraw the affected workspace indicators automatically.
 
 ## addtitional resources
 - [This script (https://github.com/brunerd/macAdminTools/blob/99da3d3dd1155019758a7753075aea13db6ad3b2/Scripts/iCloudPrivateRelayStatus.sh#L36)](https://github.com/brunerd/macAdminTools/blob/99da3d3dd1155019758a7753075aea13db6ad3b2/Scripts/iCloudPrivateRelayStatus.sh#L36) can check whether iCloud Private Relay is running. Maybe this can be used to set the status as well.

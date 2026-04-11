@@ -5,7 +5,7 @@
 # ============================================================================
 # this script handles individual workspace updates.
 # used for: initial setup when items are created, click handling
-# NOTE: event-based updates are now handled by aerospace-coordinator.sh
+# NOTE: event-based updates are now handled by aerospace-event-handler.sh
 # ============================================================================
 
 # source shared functions
