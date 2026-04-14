@@ -40,64 +40,93 @@ else
 fi
 
 # ============================================================================
-# helper function: build icon strip from workspace apps
+# build_icon_strip
 # ============================================================================
+# queries aerospace for all windows in a workspace and builds a space-prefixed
+# string of app font ligatures, rendered as icons by sketchybar-app-font
+# (e.g. " :safari::ghostty:" where each :name: is rendered as an icon glyph).
+#
 # arguments:
 #   $1 - workspace ID
+#
 # returns:
-#   icon_strip - string with app icons or empty string
+#   space-prefixed ligature string, or "" if no windows
 
 build_icon_strip() {
   local apps icon_strip
 
-  # get list of app names in this workspace
   apps=$(aerospace list-windows --workspace "$1" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
-  # build icon strip from app names
-  icon_strip=" "
   if [ "${apps}" != "" ]; then
-    while read -r app
-    do
+    icon_strip=" "
+    while read -r app; do
       icon_strip+="$($CONFIG_DIR/plugins/map_app_icon.sh "$app")"
     done <<< "${apps}"
   else
-    icon_strip=""  # empty workspace
+    icon_strip=""
   fi
 
   echo "$icon_strip"
 }
 
 # ============================================================================
-# workspace icon reload function
+# build_workspace_label
 # ============================================================================
-# updates a single workspace's display based on its current state
+# converts a raw icon strip into a display-ready label.
+# returns the icon strip unchanged if non-empty, or a dash indicator if empty.
+#
 # arguments:
-#   $1 - workspace ID to reload
-# behavior:
-#   - queries aerospace for windows in the workspace
-#   - builds icon strip from app names (or shows dash if empty)
-#   - applies appropriate styling (highlight if focused, hide if empty+unfocused)
+#   $1 - icon strip (output of build_icon_strip, may be empty)
+#
+# returns:
+#   icon strip if non-empty, or " —" if empty
 
-reload_workspace_icon() {
-  # build icon strip from workspace apps
-  icon_strip=$(build_icon_strip "$1")
-
-  # determine background color based on focus state
-  # focused workspace gets visible background, others get transparent
-  # if AEROSPACE_FOCUSED_WORKSPACE is not set (e.g., during initial --update),
-  # query aerospace directly to determine the focused workspace
-  FOCUSED="${AEROSPACE_FOCUSED_WORKSPACE:-$(aerospace list-workspaces --focused)}"
-
-  if [ "$1" = "$FOCUSED" ]; then
-    BACKGROUND_COLOR=$COLOR_80
+build_workspace_label() {
+  if [ -n "$1" ]; then
+    echo "$1"
   else
-    BACKGROUND_COLOR=$COLOR_80_TRANSPARENT
+    echo " —"
+  fi
+}
+
+# ============================================================================
+# resolve_workspace_state
+# ============================================================================
+# determines the display state for a workspace and sets LABEL and PROPERTIES.
+# called once per workspace inside reload_workspace_icon.
+#
+# arguments:
+#   $1 - workspace ID
+#   $2 - display label (output of build_workspace_label)
+#   $3 - icon strip (output of build_icon_strip; empty string means no windows)
+#   $4 - currently focused workspace ID
+#
+# sets (accessible to caller):
+#   LABEL      - passed through from $2 unchanged
+#   PROPERTIES - sketchybar property array to apply
+#
+# resolves one of two states:
+#   show: workspace has apps (non-empty icon strip), or is empty but focused
+#   hide: workspace is empty and not focused (dash label set but item invisible)
+
+resolve_workspace_state() {
+  local workspace_id="$1"
+  local label="$2"
+  local icon_strip="$3"
+  local focused_workspace="$4"
+
+  local background_color
+  if [ "$workspace_id" = "$focused_workspace" ]; then
+    background_color=$COLOR_80
+  else
+    background_color=$COLOR_80_TRANSPARENT
   fi
 
-  # define property sets for showing and hiding workspaces
-  # PROPERTIES_SHOW: normal padding, drawings on (visible workspace)
-  PROPERTIES_SHOW=(
-    background.color=$BACKGROUND_COLOR
+  # icon.drawing and label.drawing are set explicitly rather than using the top-level
+  # drawing property; the global one bypasses animation, making transitions abrupt.
+  # specific properties animate correctly, resulting in smoother show/hide transitions.
+  local properties_show=(
+    background.color=$background_color
     icon.drawing=on
     label.drawing=on
     icon.padding_left=$PADDING_OUTER
@@ -108,9 +137,8 @@ reload_workspace_icon() {
     padding_right=$MARGIN
   )
 
-  # PROPERTIES_HIDE: zero padding, drawings off (collapsed to invisible)
-  PROPERTIES_HIDE=(
-    background.color=$BACKGROUND_COLOR
+  local properties_hide=(
+    background.color=$background_color
     icon.drawing=off
     label.drawing=off
     icon.padding_left=0
@@ -121,21 +149,52 @@ reload_workspace_icon() {
     padding_right=0
   )
 
-  # determine label and properties based on workspace state:
-  # 1. has apps: show app icons
-  # 2. empty + focused: show dash indicator
-  # 3. empty + unfocused: collapse to invisible
-  if [ "${icon_strip}" != "" ]; then
-    LABEL="$icon_strip"
-    PROPERTIES=("${PROPERTIES_SHOW[@]}")
-  elif [ "$1" = "$FOCUSED" ]; then
-    LABEL=" —"
-    PROPERTIES=("${PROPERTIES_SHOW[@]}")
-  else
-    LABEL=""
-    PROPERTIES=("${PROPERTIES_HIDE[@]}")
-  fi
+  LABEL="$label"
 
-  # apply properties with animation (5 frames @ 60Hz = ~83ms)
-  sketchybar --animate sin 5 --set space.$1 label="$LABEL" "${PROPERTIES[@]}"
+  if [ -n "$icon_strip" ] || [ "$workspace_id" = "$focused_workspace" ]; then
+    PROPERTIES=("${properties_show[@]}")
+  else
+    PROPERTIES=("${properties_hide[@]}")
+  fi
+}
+
+# ============================================================================
+# reload_workspace_icon
+# ============================================================================
+# updates the sketchybar display for one or more workspaces in a single call.
+# acts as the orchestrator: calls each function independently, stores results
+# in local vars, and passes everything explicitly to the next step.
+#
+# arguments:
+#   "$@" - one or more workspace IDs (e.g. "1", or $AEROSPACE_WORKSPACES)
+#
+# behavior:
+#   - queries the focused workspace once before iterating
+#   - for each workspace: builds icon strip and label, resolves display state
+#   - batches all --set commands into a single sketchybar call
+#
+# usage:
+#   reload_workspace_icon "1"
+#   reload_workspace_icon $AEROSPACE_WORKSPACES
+
+reload_workspace_icon() {
+  # query focused workspace once, reused across all iterations by resolve_workspace_state.
+  # falls back to querying aerospace directly if AEROSPACE_FOCUSED_WORKSPACE is not set.
+  local focused_workspace="${AEROSPACE_FOCUSED_WORKSPACE:-$(aerospace list-workspaces --focused)}"
+
+  # accumulate --set flags for all workspaces into one batched sketchybar call
+  local sketchybar_cmd=(sketchybar --animate sin 5)
+
+  for workspace_id in "$@"; do
+    local icon_strip workspace_label
+    icon_strip=$(build_icon_strip "$workspace_id")
+    workspace_label=$(build_workspace_label "$icon_strip")
+
+    resolve_workspace_state "$workspace_id" "$workspace_label" "$icon_strip" "$focused_workspace"
+    # resolve_workspace_state sets LABEL and PROPERTIES
+
+    sketchybar_cmd+=(--set "space.$workspace_id" label="$LABEL" "${PROPERTIES[@]}")
+  done
+
+  "${sketchybar_cmd[@]}"
 }

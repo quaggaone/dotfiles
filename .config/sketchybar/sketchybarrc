@@ -66,12 +66,8 @@ sketchybar --default "${default[@]}"
 ## MENUBAR ITEMS ##
 ###################
 
-sketchybar --add event aerospace_workspace_change
-
-## aerospace event handler (reloads workspace indicators - invisible, logic only)
-sketchybar --add item aerospace.event-handler popup \
-           --set aerospace.event-handler script="$PLUGIN_DIR/aerospace-event-handler.sh" \
-           --subscribe aerospace.event-handler aerospace_workspace_change
+## event handlers
+source $ITEM_DIR/aerospace-event-handler.sh
 
 ## left items
 source $ITEM_DIR/aerospace.sh
@@ -80,10 +76,10 @@ source $ITEM_DIR/aerospace.sh
 source $ITEM_DIR/front_app.sh
 
 ## right items
-source "$ITEM_DIR/clock.sh"
-# source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/battery_time_remaining.sh"
+source $ITEM_DIR/clock.sh
+# source $ITEM_DIR/volume.sh
+source $ITEM_DIR/battery.sh
+source $ITEM_DIR/battery_time_remaining.sh
 
 
 ## force all scripts to run the first time (never do this in a script)

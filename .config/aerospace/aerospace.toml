@@ -5,8 +5,8 @@
 # handles automatic app placement, keybindings, and layout rules.
 #
 # workspaces are purpose-driven: numbered (1-6) for general use, named for
-# fixed contexts — C: communication, M: media, N: notes, X: mail.
-# all keybindings use ctrl+alt+cmd as the base modifier — mapped to a single
+# fixed contexts (C: communication, M: media, N: notes, X: mail).
+# all keybindings use ctrl+alt+cmd as the base modifier, mapped to a single
 # Hyper key via Karabiner.
 #
 # SKETCHYBAR INTEGRATION

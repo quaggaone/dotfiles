@@ -27,20 +27,13 @@ source "$CONFIG_DIR/utils/aerospace-functions.sh"
 # ============================================================================
 
 if [ "$SENDER" = "aerospace_workspace_change" ]; then
-  # requires callers to pass AEROSPACE_WORKSPACES as a space-separated list
-  # of workspace IDs to reload. examples:
-  #   AEROSPACE_WORKSPACES="1 2"   (workspace switch or window moved)
-  #   AEROSPACE_WORKSPACES="X"     (single workspace refresh)
-
-  for workspace_id in $AEROSPACE_WORKSPACES; do
-    reload_workspace_icon "$workspace_id"
-  done
+  # AEROSPACE_WORKSPACES is a space-separated list of workspace IDs passed by the caller.
+  # reload_workspace_icon loops internally and fires all updates in one sketchybar call.
+  reload_workspace_icon $AEROSPACE_WORKSPACES
 fi
 
 # future event handlers can be added here as elif clauses
 # example:
 # elif [ "$SENDER" = "aerospace_window_moved" ]; then
-#   for workspace_id in $AEROSPACE_WORKSPACES; do
-#     reload_workspace_icon "$workspace_id"
-#   done
+#   reload_workspace_icon $AEROSPACE_WORKSPACES
 # fi
