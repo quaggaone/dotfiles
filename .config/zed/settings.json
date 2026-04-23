@@ -7,7 +7,20 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "agent": {
+    "dock": "right",
     "use_modifier_to_send": true,
     "default_profile": "ask",
     "default_model": {
@@ -21,9 +34,9 @@
     "light": "Zed Legacy: Rosé Pine Dawn",
     "dark": "Zed Legacy: Rosé Pine"
   },
-  "ui_font_family": "ZedMono Nerd Font Propo",
+  "ui_font_family": "fd-conduit-term",
   "ui_font_size": 14,
-  "buffer_font_family": "ZedMono Nerd Font Mono",
+  "buffer_font_family": "fd-conduit-term-nf",
   "buffer_font_size": 14,
   "buffer_line_height": "standard",
   "telemetry": {
@@ -42,7 +55,7 @@
     "show": "always"
   },
   "terminal": {
-    "font_family": "ZedMono Nerd Font Mono"
+    "font_family": "fd-conduit-term"
   },
   "auto_install_extensions": {
     // LANGUAGES
