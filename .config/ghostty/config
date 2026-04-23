@@ -9,9 +9,9 @@ keybind = cmd+r=reload_config
 keybind = shift+enter=text:\x1b\r
 
 font-size =                 14
-font-family =               ZedMono Nerd Font Mono
+font-family =               fd-conduit-term-nf
 font-style =
 font-style-bold =           ExtraBold
-font-style-italic =         Oblique
-font-style-bold-italic =    ExtraBold Oblique
+font-style-italic =         Italic
+font-style-bold-italic =    ExtraBold Italic
 
