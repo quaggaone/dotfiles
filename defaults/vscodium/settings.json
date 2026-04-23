@@ -14,7 +14,7 @@
         "*.html": "html",
         "*.njk": "html"
     },
-    "editor.fontFamily": "ZedMono Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "fd-conduit-term-nf, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.lineHeight": 1.25,
@@ -24,5 +24,10 @@
     "r.rterm.mac": "${userHome}/.local/bin/radian",
     "r.plot.useHttpgd": true,
     "markdown.preview.fontFamily": "IBM Plex Sans,-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
-    "claudeCode.useTerminal": true
+    "claudeCode.useTerminal": true,
+    "workbench.sideBar.experimental.fontFamily": "fd-conduit-term",
+    "workbench.experimental.fontFamily": "fd-conduit-term",
+    "workbench.statusBar.experimental.fontFamily": "fd-conduit-term",
+    "workbench.tabs.experimental.fontFamily": "fd-conduit-term",
+    "workbench.activityBar.experimental.fontFamily": "fd-conduit-term"
 }
