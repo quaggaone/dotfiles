@@ -32,3 +32,32 @@ threshold = 30
 style = 'bold yellow'
 
 # 30 percent and over does not show the battery indicator
+
+[profiles]
+claude-code = "$directory$git_branch$git_status$claude_model$claude_context$claude_cost"
+
+[claude_model]
+symbol = ''
+format = '· [$model_id]($style) '
+
+[git_branch]
+symbol = ''
+
+[claude_cost]
+symbol = ''
+format = '· [$symbol(\$$cost)]($style) '
+
+[claude_context]
+gauge_width = 10
+
+[[claude_context.display]]
+threshold = 80
+style = 'bold red'
+
+[[claude_context.display]]
+threshold = 60
+style = 'bold yellow'
+
+[[claude_context.display]]
+threshold = 0
+style = 'bold green'
