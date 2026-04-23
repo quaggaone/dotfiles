@@ -47,10 +47,10 @@ set_persistent_apps() {
 set_persistent_apps "Safari"    "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/"
 set_persistent_apps "Calendar"  "/System/Applications/Calendar.app/"
 set_persistent_apps "Mail"      "/System/Applications/Mail.app/"
+set_persistent_apps "Reminders" "/System/Applications/Reminders.app/"
 set_persistent_apps "WhatsApp"  "/Applications/WhatsApp.app/"
 set_persistent_apps "Messages"  "/System/Applications/Messages.app/"
 set_persistent_apps "Obsidian"  "/Applications/Obsidian.app/"
-set_persistent_apps "Le Chat"   "${HOME}/Applications/Le%20Chat.app/"
 set_persistent_apps "Ghostty"   "/Applications/Ghostty.app/"
 set_persistent_apps "Zed"       "/Applications/Zed.app/"
 
