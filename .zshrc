@@ -12,12 +12,13 @@ export PATH="$HOME/.local/bin:$PATH"
 alias ls='eza'
 alias ll='eza -al --icons=auto --hyperlink --group-directories-first --git --time-style=long-iso --no-user'
 alias tree='eza -aT --group-directories-first --git-ignore'
+alias dig='dig +noall +answer +identify'
 
 # old ls aliases
 #alias ll='ls -alFhG'
 
 ## GIT
-alias g='git'
+=alias g='git'
 alias gs='git status -s'
 alias gd='git diff'
 alias ga='git add'
