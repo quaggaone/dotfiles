@@ -13,6 +13,8 @@ CAL_DOMAIN="com.apple.iCal"
 # Settings
 ## General
 set_defaults "$CAL_DOMAIN" "number of hours displayed" "int" "16"
+set_defaults "$CAL_DOMAIN" "Show Week Numbers" "bool" "true"
+set_defaults "$CAL_DOMAIN" "ShowCompletedReminders" "bool" "false"
 
 # Restart Calendar to apply changes
 echo "Quitting Calendar to apply changes..."

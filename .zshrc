@@ -18,7 +18,7 @@ alias dig='dig +noall +answer +identify'
 #alias ll='ls -alFhG'
 
 ## GIT
-=alias g='git'
+alias g='git'
 alias gs='git status -s'
 alias gd='git diff'
 alias ga='git add'
