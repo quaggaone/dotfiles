@@ -42,6 +42,10 @@ alias py-venv='source "$HOME/.local/share/venvs/python-general/bin/activate"'
 autoload -Uz compinit
 compinit
 
+# direnv config
+# installed manually via nix
+eval "$(direnv hook zsh)"
+
 # starship cross-shell prompt
 eval "$(starship init zsh)"
 
