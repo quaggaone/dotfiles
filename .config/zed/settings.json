@@ -70,6 +70,7 @@
     "r": true,
     "ruby": true,
     "lua": true,
+    "quarto": true,
     // HELPERS
     "emmet": true,
     // THEMES
