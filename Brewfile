@@ -89,6 +89,7 @@ brew "eza"          # replacement for ls
 brew "fzf"          # fuzzy finder
 brew "gh"           # github cli
 brew "git-delta"    # syntax-highlighting pager for git, diff, and grep
+brew "neovim"       # vim based tui ide
 brew "node"         # maybe replace with nvm to manage node installs
 brew "python"       # installs latest python because macOS doesn't
 # brew "ruby"         # more modern version than macOS provides
@@ -124,9 +125,9 @@ cask "obsidian"
 mas "Goodnotes", id: 1444383602
 # mas "Ulysses", id: 1225570693
 
-mas "Numbers", id: 409203825
-mas "Keynote", id: 409183694
-mas "Pages", id: 409201541
+mas "Numbers", id: 361304891
+mas "Keynote", id: 361285480
+mas "Pages", id: 361309726
 
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft PowerPoint", id: 462062816

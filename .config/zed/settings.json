@@ -55,7 +55,7 @@
     "show": "always"
   },
   "terminal": {
-    "font_family": "fd-conduit-term"
+    "font_family": "fd-conduit-term-nf"
   },
   "auto_install_extensions": {
     // LANGUAGES
