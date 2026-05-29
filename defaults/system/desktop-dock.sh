@@ -167,6 +167,11 @@ set_defaults "-g" "AppleReduceDesktopTinting" "bool" "true"            # Disallo
 set_defaults "-g" "SLSMenuBarUseBlurredAppearance" "bool" "true"       # Enable blurred menu bar appearance
 
 
+# game controller settings (some are not even in the gui)
+set_defaults "com.apple.GameController" "bluetoothPrefsMenuLongPressAction" "int" "0"
+set_defaults "com.apple.GameController" "bluetoothPrefsShareLongPressSystemGestureMode" "int" "-1"
+
+
 # Restart Dock to apply changes
 echo "Restarting Dock to apply changes..."
 killall Dock
