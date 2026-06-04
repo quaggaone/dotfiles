@@ -1,0 +1,12 @@
+{
+  "trustedtaps": [
+    "quaggaone/tap"
+  ],
+  "trustedformulae": [
+    "felixkratz/formulae/sketchybar",
+    "gromgit/brewtils/taproom"
+  ],
+  "trustedcasks": [
+    "nikitabobko/tap/aerospace"
+  ]
+}

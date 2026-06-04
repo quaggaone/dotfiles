@@ -14,7 +14,7 @@ defaults -currentHost write com.apple.controlcenter AirDrop -int 24
 defaults -currentHost write com.apple.controlcenter Bluetooth -int 24
 defaults -currentHost write com.apple.controlcenter Display -int 2
 defaults -currentHost write com.apple.controlcenter FocusModes -int 2
-defaults -currentHost write com.apple.controlcenter NowPlaying -int 2
+defaults -currentHost write com.apple.controlcenter NowPlaying -int 24
 defaults -currentHost write com.apple.controlcenter ScreenMirroring -int 2
 defaults -currentHost write com.apple.controlcenter Sound -int 2
 defaults -currentHost write com.apple.controlcenter WiFi -int 2

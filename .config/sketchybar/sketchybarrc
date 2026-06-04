@@ -9,7 +9,7 @@ ITEM_DIR="$CONFIG_DIR/items"
 ## bar appearance
 sketchybar --bar    position=top            \
                     height=32               \
-                    notch_display_height=38 \
+                    notch_offset=-32        \
                     notch_width=230         \
                     blur_radius=12          \
                     color=$COLOR_BAR        \
