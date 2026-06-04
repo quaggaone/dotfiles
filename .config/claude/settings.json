@@ -1,0 +1,16 @@
+{
+  "env": {
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "_ZO_DOCTOR": "0"
+  },
+  "model": "sonnet",
+  "statusLine": {
+    "type": "command",
+    "command": "starship statusline claude-code"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  },
+  "syntaxHighlightingDisabled": false,
+  "theme": "auto"
+}
