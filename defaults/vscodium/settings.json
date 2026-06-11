@@ -23,6 +23,7 @@
     "r.bracketedPaste": true,
     "r.rterm.mac": "${userHome}/.local/bin/radian",
     "r.plot.useHttpgd": true,
+    "quarto.render.renderOnSave": true,
     "markdown.preview.fontFamily": "IBM Plex Sans,-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
     "claudeCode.useTerminal": true,
     "workbench.sideBar.experimental.fontFamily": "fd-conduit-term",

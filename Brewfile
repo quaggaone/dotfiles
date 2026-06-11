@@ -201,4 +201,5 @@ vscode "myriad-dreamin.tinymist"    # integrated typst language service
 vscode "quarto.quarto"              # open-source scientific and technical publishing system
 vscode "anthropic.claude-code"      # claude code with gui
 vscode "openai.chatgpt"             # codex with gui
+vscode "jnoortheen.nix-ide"         # nix lang support
 
