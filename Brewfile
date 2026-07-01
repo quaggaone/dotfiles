@@ -202,4 +202,5 @@ vscode "quarto.quarto"              # open-source scientific and technical publi
 vscode "anthropic.claude-code"      # claude code with gui
 vscode "openai.chatgpt"             # codex with gui
 vscode "jnoortheen.nix-ide"         # nix lang support
+vscode "tombi-toml.tombi"           # toml lang support
 

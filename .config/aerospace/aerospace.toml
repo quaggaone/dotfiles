@@ -41,6 +41,19 @@ exec-on-workspace-change = [
 # Start AeroSpace at login
 start-at-login = true
 
+# Opt in to config-version 2 behavior. See:
+# https://nikitabobko.github.io/AeroSpace/guide#config-version
+config-version = 2
+
+# Automatically reload the config on file change (no manual reload needed)
+auto-reload-config = true
+
+# In config-version 2, persistent workspaces are no longer inferred from
+# keybindings — they must be declared explicitly. This list mirrors the
+# workspace bindings below and is the enumeration source sketchybar uses to
+# create its workspace items (see .config/sketchybar/items/aerospace.sh).
+persistent-workspaces = ['1', '2', '3', '4', '5', '6', 'C', 'M', 'N', 'X']
+
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true

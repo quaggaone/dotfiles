@@ -3,7 +3,7 @@
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "_ZO_DOCTOR": "0"
   },
-  "model": "sonnet",
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "starship statusline claude-code"
@@ -13,5 +13,6 @@
     "swift-lsp@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": false,
-  "theme": "auto"
+  "theme": "auto",
+  "effortLevel": "medium"
 }
