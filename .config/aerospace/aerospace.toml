@@ -54,6 +54,43 @@ auto-reload-config = true
 # create its workspace items (see .config/sketchybar/items/aerospace.sh).
 persistent-workspaces = ['1', '2', '3', '4', '5', '6', 'C', 'M', 'N', 'X']
 
+# ============================================================================
+# Arrange Apps — on-window-detected callbacks
+# ============================================================================
+# Top-level global option (must live outside any [mode.*] table).
+# Callbacks are grouped by shared behavior: apps that share the same 'run'
+# are matched with an ||-chained 'if' so each group is a single callback.
+# The sketchybar trigger notifies the bar to redraw the target workspace.
+on-window-detected = [
+  # Float utility/dialog apps (no workspace move, no bar redraw needed)
+  { if = '''test %{app-bundle-id} = com.apple.FaceTime \
+         || test %{app-bundle-id} = com.apple.ActivityMonitor \
+         || test %{app-bundle-id} = com.apple.ScreenSharing \
+         || test %{app-bundle-id} = com.macpaw.CleanMyMac5''',
+    run = ['layout floating'] },
+
+  # Mail -> X (accordion layout)
+  { if = 'test %{app-bundle-id} = com.apple.mail',
+    run = ['move-node-to-workspace X', 'layout accordion horizontal', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=X'] },
+
+  # Communication apps -> C
+  { if = '''test %{app-bundle-id} = net.whatsapp.WhatsApp \
+         || test %{app-bundle-id} = com.apple.MobileSMS \
+         || test %{app-bundle-id} = org.whispersystems.signal-desktop \
+         || test %{app-bundle-id} = im.riot.app''',
+    run = ['move-node-to-workspace C', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=C'] },
+
+  # Media apps -> M
+  { if = '''test %{app-bundle-id} = com.reederapp.5.macOS \
+         || test %{app-bundle-id} = com.apple.Music''',
+    run = ['move-node-to-workspace M', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=M'] },
+
+  # Notes apps -> N
+  { if = '''test %{app-bundle-id} = md.obsidian \
+         || test %{app-bundle-id} = notion.id''',
+    run = ['move-node-to-workspace N', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=N'] },
+]
+
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
@@ -282,56 +319,3 @@ ctrl-alt-cmd-shift-l = ['join-with right', 'mode main']
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
-
-# Arrange Apps
-[[on-window-detected]]
-if.app-id = 'com.apple.FaceTime'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.ActivityMonitor'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.ScreenSharing'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.macpaw.CleanMyMac5'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.mail'
-run = ['move-node-to-workspace X', 'layout accordion horizontal', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=X']
-
-[[on-window-detected]]
-if.app-id = 'net.whatsapp.WhatsApp'
-run = ['move-node-to-workspace C', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=C']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.MobileSMS'
-run = ['move-node-to-workspace C', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=C']
-
-[[on-window-detected]]
-if.app-id = 'org.whispersystems.signal-desktop'
-run = ['move-node-to-workspace C', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=C']
-
-[[on-window-detected]]
-if.app-id = 'im.riot.app'
-run = ['move-node-to-workspace C', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=C']
-
-[[on-window-detected]]
-if.app-id = 'com.reederapp.5.macOS'
-run = ['move-node-to-workspace M', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=M']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Music'
-run = ['move-node-to-workspace M', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=M']
-
-[[on-window-detected]]
-if.app-id = 'md.obsidian'
-run = ['move-node-to-workspace N', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=N']
-
-[[on-window-detected]]
-if.app-id = 'notion.id'
-run = ['move-node-to-workspace N', 'exec-and-forget sketchybar --trigger aerospace_workspace_change AEROSPACE_WORKSPACES=N']
