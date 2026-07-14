@@ -3,16 +3,16 @@
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "_ZO_DOCTOR": "0"
   },
-  "model": "opus",
+  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "starship statusline claude-code"
   },
   "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": false,
     "swift-lsp@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": false,
-  "theme": "auto",
-  "effortLevel": "medium"
+  "effortLevel": "medium",
+  "theme": "auto"
 }
