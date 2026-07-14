@@ -167,6 +167,7 @@ mas "Logic Pro", id: 634148309
 # UNI #
 #######
 
+brew "arf"  # better r console written in rust
 brew "r"    # explicitly install as formula (no GUI r console)
 
 cask "anki"
@@ -203,4 +204,3 @@ vscode "anthropic.claude-code"      # claude code with gui
 vscode "openai.chatgpt"             # codex with gui
 vscode "jnoortheen.nix-ide"         # nix lang support
 vscode "tombi-toml.tombi"           # toml lang support
-
