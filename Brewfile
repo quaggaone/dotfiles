@@ -171,6 +171,7 @@ brew "arf"  # better r console written in rust
 brew "r"    # explicitly install as formula (no GUI r console)
 
 cask "anki"
+cask "positron"   # newer ide from the makers of rstudio
 # cask "rstudio"
 
 
