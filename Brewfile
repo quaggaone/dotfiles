@@ -198,6 +198,7 @@ cask "font-sketchybar-app-font"   # menubar font for app icons
 #####################
 
 vscode "mvllow.rose-pine"           # color theme
+vscode "ravenothere.rose-pine-symbols"  # icon theme
 vscode "REditorSupport.r"           # R lang support
 vscode "myriad-dreamin.tinymist"    # integrated typst language service
 vscode "quarto.quarto"              # open-source scientific and technical publishing system
