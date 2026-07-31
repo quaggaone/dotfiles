@@ -1,0 +1,6 @@
+/* `.cm-content` affects the editor, and
+   `.markdown-body` affects the preview pane (preview extension)
+   */
+.cm-content, .markdown-body {
+    font-family: "IBM Plex Sans";
+}
