@@ -417,7 +417,7 @@ function __icon_map() {
    "Dorico" | "Dorico Pro")
         icon_result=":dorico:"
         ;;
-   "Dota2")
+   "Dota 2")
         icon_result=":dota2:"
         ;;
    "Double Commander")
@@ -717,6 +717,9 @@ function __icon_map() {
    "Product Portal" | "iZotope RX 9" | "iZotope RX 10" | "iZotope RX 11" | "iZotope RX 12" | "iZotope Ozone 9" | "iZotope Ozone 10" | "iZotope Ozone 11" | "iZotope Ozone 12")
         icon_result=":izotope:"
         ;;
+   "Jan")
+        icon_result=":jan:"
+        ;;
    "Jane Reader")
         icon_result=":jane_reader:"
         ;;
@@ -734,6 +737,9 @@ function __icon_map() {
         ;;
    "JetBrains Toolbox")
         icon_result=":jetbrains_toolbox:"
+        ;;
+   "Jira")
+        icon_result=":jira:"
         ;;
    "Joplin")
         icon_result=":joplin:"
@@ -776,6 +782,9 @@ function __icon_map() {
         ;;
    "kitty")
         icon_result=":kitty:"
+        ;;
+   "KiwiDesk")
+        icon_result=":kiwidesk:"
         ;;
    "Kodi")
         icon_result=":kodi:"
@@ -1065,6 +1074,9 @@ function __icon_map() {
    "OneDrive")
         icon_result=":onedrive:"
         ;;
+   "ONLYOFFICE")
+        icon_result=":onlyoffice:"
+        ;;
    "Open Video Downloader")
         icon_result=":open_video_downloader:"
         ;;
@@ -1097,6 +1109,9 @@ function __icon_map() {
         ;;
    "Orion" | "Orion RC")
         icon_result=":orion:"
+        ;;
+   "Osaurus")
+        icon_result=":osaurus:"
         ;;
    "Overcast")
         icon_result=":overcast:"
@@ -1175,6 +1190,9 @@ function __icon_map() {
         ;;
    "Pixelmator Pro")
         icon_result=":pixelmator_pro:"
+        ;;
+   "PixiEditor")
+        icon_result=":pixieditor:"
         ;;
    "Play")
         icon_result=":play:"
@@ -1658,6 +1676,9 @@ function __icon_map() {
         ;;
    "企业微信" | "WeCom")
         icon_result=":wecom:"
+        ;;
+   "WeTransfer")
+        icon_result=":wetransfer:"
         ;;
    "WezTerm" | "wezterm-gui")
         icon_result=":wezterm:"
