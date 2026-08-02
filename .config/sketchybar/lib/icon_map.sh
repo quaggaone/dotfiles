@@ -231,6 +231,9 @@ function __icon_map() {
    "BusyCal")
         icon_result=":busycal:"
         ;;
+   "Buzz")
+        icon_result=":buzz:"
+        ;;
    "Calculator" | "Calculette" | "Rechner" | "Калькулятор")
         icon_result=":calculator:"
         ;;
@@ -383,6 +386,9 @@ function __icon_map() {
         ;;
    "CleanMyMac X")
         icon_result=":desktop:"
+        ;;
+   "Devin")
+        icon_result=":devin:"
         ;;
    "DEVONthink 3" | "DEVONthink")
         icon_result=":devonthink3:"
@@ -579,7 +585,7 @@ function __icon_map() {
    "GIMP")
         icon_result=":gimp:"
         ;;
-   "GitHub Desktop")
+   "GitHub Desktop" | "GitHub Copilot")
         icon_result=":git_hub:"
         ;;
    "GitKraken")
@@ -701,6 +707,9 @@ function __icon_map() {
         ;;
    "Instapaper")
         icon_result=":instapaper:"
+        ;;
+   "Instruments")
+        icon_result=":instruments:"
         ;;
    "Invoice Ninja" | "InvoiceNinja" | "Invoice Ninja"* | "invoiceninja"*)
         icon_result=":invoice_ninja:"
@@ -1658,6 +1667,9 @@ function __icon_map() {
         ;;
    "Wave")
         icon_result=":waveterm:"
+        ;;
+   "Waydir")
+        icon_result=":waydir:"
         ;;
    "Weather" | "Wetter" | "Погода")
         icon_result=":weather:"
