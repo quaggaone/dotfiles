@@ -255,6 +255,9 @@ function __icon_map() {
    "Caprine")
         icon_result=":caprine:"
         ;;
+   "Carbon Copy Cloner")
+        icon_result=":carbon_copy_cloner:"
+        ;;
    "ChatGPT Atlas")
         icon_result=":chatgpt_atlas:"
         ;;
