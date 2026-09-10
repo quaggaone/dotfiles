@@ -13,6 +13,7 @@
     "swift-lsp@claude-plugins-official": true
   },
   "syntaxHighlightingDisabled": false,
+  "alwaysThinkingEnabled": false,
   "effortLevel": "high",
   "theme": "auto"
 }
