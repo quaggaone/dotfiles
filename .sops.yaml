@@ -1,0 +1,8 @@
+keys:
+  - &felixdim age1qtt0dfa504n2nfuad9hqmj0cyv8ggfh859aqzw9f26mhra7uz3xq97lfr3
+
+creation_rules:
+  - path_regex: nix/secrets/[^/]+\.yaml$
+    key_groups:
+      - age:
+          - *felixdim
