@@ -61,7 +61,6 @@ cask "cyberduck"
 cask "iina"
 cask "imageoptim"
 cask "obs"
-cask "ollama-app"
 cask "synology-drive"
 cask "utm"
 cask "yubico-authenticator"
@@ -206,3 +205,5 @@ vscode "anthropic.claude-code"      # claude code with gui
 vscode "openai.chatgpt"             # codex with gui
 vscode "jnoortheen.nix-ide"         # nix lang support
 vscode "tombi-toml.tombi"           # toml lang support
+vscode "lucien-martijn.parquet-visualizer"  # .parquet file viewer
+
