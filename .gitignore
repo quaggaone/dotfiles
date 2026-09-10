@@ -4,9 +4,7 @@ secrets.sh
 
 # never commit: decrypts everything in nix/secrets/
 /.config/sops/
-# runtime symlink into a temp dir, repointed on every activation
 /.config/sops-nix/
-# nix build output symlink
 /result
 
 # don't track app bullshit
@@ -20,3 +18,4 @@ secrets.sh
 /.config/zed/prompts
 /.config/zed/conversations
 /.config/vim/.netrwhist
+/.config/gh/hosts.yml
