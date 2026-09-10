@@ -19,3 +19,4 @@ secrets.sh
 /.config/github-copilot
 /.config/zed/prompts
 /.config/zed/conversations
+/.config/vim/.netrwhist
