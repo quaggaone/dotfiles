@@ -7,6 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "fast": false
+      },
+      "type": "registry"
+    }
+  },
   "project_panel": {
     "dock": "left"
   },
@@ -17,6 +25,7 @@
     "dock": "left"
   },
   "git_panel": {
+    "tree_view": true,
     "dock": "left"
   },
   "agent": {
@@ -31,8 +40,8 @@
   "base_keymap": "VSCode",
   "theme": {
     "mode": "system",
-    "light": "Zed Legacy: Rosé Pine Dawn",
-    "dark": "Zed Legacy: Rosé Pine"
+    // "light": "Zed Legacy: Rosé Pine Dawn",
+    // "dark": "Zed Legacy: Rosé Pine"
   },
   "ui_font_family": "fd-conduit-term",
   "ui_font_size": 13,

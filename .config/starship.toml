@@ -43,6 +43,13 @@ format = '· [$model_id]($style) '
 [git_branch]
 symbol = ''
 
+[git_status]
+deleted = "D"
+untracked = "U"
+modified = "M"
+staged = "S"
+renamed = "R"
+
 [claude_cost]
 symbol = ''
 format = '· [$symbol(\$$cost)]($style) '
