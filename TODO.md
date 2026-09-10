@@ -5,4 +5,5 @@
 - [ ] karabiner: shortcuts concept ausdenken: alt-left -> hyperkey ctrl-left -> own custom per-app shortcuts, etc.
 - [ ] sketchybar: fix that the battery indicator no longer shows the icon (only shows percentage)
 - [ ] tmux: install and set up tmux; launch processes like sketchybar inside them (enables viewing of the log)
+- [ ] represent karabiner config using typescript generator (eg. to easily add new apps to the exception handling)
 
