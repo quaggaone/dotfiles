@@ -1,3 +1,8 @@
+# Derived from the main-v1 ssh key via ssh-to-age, not generated on its own.
+# The identity belongs at ~/.config/sops/age/keys.txt, is gitignored, and
+# exists on this machine only; age-keygen -y on it must print the recipient
+# below. Losing it means re-encrypting every secret from its original value.
+
 keys:
   - &felixdim age1qtt0dfa504n2nfuad9hqmj0cyv8ggfh859aqzw9f26mhra7uz3xq97lfr3
 
