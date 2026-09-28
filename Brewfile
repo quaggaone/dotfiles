@@ -55,7 +55,7 @@ cask "mac-mouse-fix"
 # cask "monitorcontrol"
 
 cask "claude"
-cask "claude-code"
+cask "claude-code@latest"
 cask "cleanmymac"
 cask "cyberduck"
 cask "iina"

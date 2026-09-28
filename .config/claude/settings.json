@@ -3,7 +3,7 @@
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "_ZO_DOCTOR": "0"
   },
-  "model": "opus",
+  "model": "opus[1m]",
   "statusLine": {
     "type": "command",
     "command": "starship statusline claude-code"
@@ -15,5 +15,6 @@
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": false,
   "effortLevel": "high",
+  "tui": "fullscreen",
   "theme": "auto"
 }
