@@ -3,6 +3,9 @@
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
     "_ZO_DOCTOR": "0"
   },
+  "permissions": {
+    "ask": ["mcp__obsidian__vault_delete"]
+  },
   "model": "opus[1m]",
   "statusLine": {
     "type": "command",
