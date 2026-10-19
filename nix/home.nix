@@ -6,6 +6,8 @@
   home.username = username;
   home.homeDirectory = "/Users/${username}";
 
+  programs.git.enable = true;
+
   sops = {
     age.keyFile = "/Users/${username}/.config/sops/age/keys.txt";
     secrets.obsidian-local-api-key = {
