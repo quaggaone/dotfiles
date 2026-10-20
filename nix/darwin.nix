@@ -1,10 +1,13 @@
 { pkgs, username, ... }:
 
 {
-  # Nix is installed and managed by the nix-community installer, which owns
-  # /etc/nix/nix.conf and the daemon. Enabling this means two things writing
-  # the same file; own settings belong in /etc/nix/nix.custom.conf.
-  nix.enable = false;
+  # Layer 1 (APFS /nix volume, nixbld users, initial shell hooks) stays with
+  # the NixOS installer; nix-darwin owns the Nix package, nix.conf and daemon.
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    trusted-users = [ username ]; # root comes from nix-darwin's default
+    always-allow-substitutes = true;
+  };
 
   users.users.${username} = {
     name = username;
