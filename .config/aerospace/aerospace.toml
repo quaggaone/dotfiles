@@ -289,10 +289,14 @@ end tell'
 '''
 
 ctrl-alt-cmd-t = '''exec-and-forget osascript -e '
-tell application "Ghostty"
-    activate
-    tell application "System Events" to keystroke "n" using {command down}
-end tell'
+if application "Ghostty" is running then
+    tell application "Ghostty"
+        new window
+        activate
+    end tell
+else
+    tell application "Ghostty" to activate
+end if'
 '''
 
 ctrl-alt-cmd-v = 'exec-and-forget open raycast://extensions/raycast/clipboard-history/clipboard-history'
