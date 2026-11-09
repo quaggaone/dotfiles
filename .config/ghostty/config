@@ -2,10 +2,6 @@ theme = light:Rose Pine Dawn, dark:Rose Pine
 
 macos-titlebar-proxy-icon = hidden
 
-# native liquid glass (macOS 26+), only visible with opacity below 1
-background-blur =           macos-glass-regular
-background-opacity =        0.92
-
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = cmd+r=reload_config
 # insert new line with shift+enter
